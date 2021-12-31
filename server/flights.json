@@ -1,0 +1,20 @@
+{
+    "flights":[
+        {
+            "id":1,
+            "name":"Go",
+            "price":7000
+        },
+        {
+            "id":2,
+            "name":"Jet",
+            "price":9000
+        },
+        {
+            "id":3,
+            "name":"IndiGo",
+            "price":3000
+        }
+
+    ]
+}

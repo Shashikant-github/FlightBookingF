@@ -1,0 +1,17 @@
+p{text-align: center;}
+
+.card-flight{
+    border:grey solid 2px;
+    color:lemonchiffon;
+    background-color: indianred; 
+    margin: 2px;
+    height:100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+}
+.cards-layout{
+    display:inline-flex;
+    flex-direction: row;
+    margin-left: 250px;  
+}
