@@ -7,12 +7,19 @@ import { Flight } from '../models/flight';
   providedIn: 'root'
 })
 export class FlightService {
-
-  constructor(private httpClient:HttpClient) { }
+ 
+  //  flight_URL?:string="http://localhost:3000/flights";
+  constructor(private httpClient:HttpClient) {
+  //  this.flight_URL=
+   }
   
   getAllFlights():Observable<Array<Flight>>{
-    return this.httpClient.get<Array<Flight>>('http://localhost:3000/flights');
+    return this.httpClient.get<Array<Flight>>(`http://localhost:3000/flights`);
   }
+  addFlight(flightObj:Flight):Observable<Flight> {
+    return this.httpClient.post(`http://localhost:3000/flights`,flightObj);
+  }
+
 
   
 }

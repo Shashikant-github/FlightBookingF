@@ -10,8 +10,11 @@ import { FlightService } from 'src/app/services/flight.service';
 export class FlightsComponent implements OnInit {
 
   flights?:Array<Flight>;
+  flightObj:Flight;
 
-  constructor(private flightService:FlightService) { }
+  constructor(private flightService:FlightService) {
+    this.flightObj=new Flight();
+   }
 
   ngOnInit(): void {
     this.flightService.getAllFlights().subscribe(res=>{
@@ -19,6 +22,16 @@ export class FlightsComponent implements OnInit {
        this.flights=res;
      console.log(res);
      })
+  }
+  addFlight(){
+      console.log(`Added Flight Name : ${this.flightObj?.name}`);
+      this.flightService.addFlight(this.flightObj).subscribe(res=>{
+        this.flights?.push(this.flightObj);
+        console.log("Flight Added");
+      })
+      
+      
+
   }
 
 }

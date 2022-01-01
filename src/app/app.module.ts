@@ -19,6 +19,12 @@ import { BookFlightComponent } from './components/book-flight/book-flight.compon
 import { SearchFlightComponent } from './components/search-flight/search-flight.component';
 import { FlightsComponent } from './components/flights/flights.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { AddFlightComponent } from './components/components/flights/add-flight/add-flight.component';
+import { DisplayFlightComponent } from './components/flights/display-flight/display-flight.component';
 
 
 @NgModule({
@@ -30,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     BookFlightComponent,
     SearchFlightComponent,
-    FlightsComponent
+    FlightsComponent,
+    AddFlightComponent,
+    DisplayFlightComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-   HttpClientModule
+   HttpClientModule,
+   ReactiveFormsModule,
+   MatExpansionModule,
+   MatFormFieldModule,
+   
+   MatInputModule,
+   FormsModule
   
   ],
   providers: [],
