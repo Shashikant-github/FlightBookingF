@@ -8,15 +8,18 @@ import { SearchFlightComponent } from 'src/app/components/search-flight/search-f
 import { BookFlightComponent } from 'src/app/components/book-flight/book-flight.component';
 import { DisplayFlightComponent } from 'src/app/components/flights/display-flight/display-flight.component';
 import { AddFlightComponent } from 'src/app/components/flights/add-flight/add-flight.component';
+import { LogoutComponent } from 'src/app/components/logout/logout.component';
+import { AuthGuard } from 'src/app/guard/auth.guard';
 
 const routes:Routes=[
-  {path:'', component:LoginComponent, pathMatch:'full'},
+  {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   {path:'searchFlight',component:SearchFlightComponent},
   {path:"bookFlight",component:BookFlightComponent},
   {path:"displayFlights",component:DisplayFlightComponent},
-  {path:"addFlight",component:AddFlightComponent}
+  {path:"addFlight",component:AddFlightComponent},
+  {path:"logout",component:LogoutComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

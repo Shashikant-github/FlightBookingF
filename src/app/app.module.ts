@@ -27,6 +27,8 @@ import {MatInputModule} from '@angular/material/input';
 import { DisplayFlightComponent } from './components/flights/display-flight/display-flight.component';
 import { AddFlightComponent } from './components/flights/add-flight/add-flight.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { HeaderComponent } from './components/header/header.component';
     FlightsComponent,
     AddFlightComponent,
     DisplayFlightComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

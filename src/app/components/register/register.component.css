@@ -5,3 +5,7 @@ p{text-align: center;
     align-items: center;
     margin-left: 300px;
 }
+.registerForm{
+    display:flex;
+    justify-content: center;
+}

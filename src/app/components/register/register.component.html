@@ -1,2 +1,33 @@
-<p>register worksddd!</p>
-<button id="btn-register" type="button" class="btn btn-primary">Primary</button>
+<p>User Registration Form</p>
+<div class="registerForm">
+<form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
+    <div class="form-group">
+        <label for="exampleInputText">Username</label>
+        <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp"
+            placeholder="Please Enter Username" name="userName" [(ngModel)]="registeredUser.UserName">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+            placeholder="Please Enter Password" [(ngModel)]="registeredUser.Password">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputCity">City</label>
+        <input type="text" name="city" class="form-control" id="exampleInputCity" placeholder="Please Enter City"
+            [(ngModel)]="registeredUser.City">
+    </div>
+    <div class="form-group">
+        <br>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a routerLink="/login">Click here to Login</a>
+    </div>
+</form>
+
+</div>
+
+<!-- UserName?:string;
+City?:string;
+Password?:string;
+role?:string; -->

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouteService } from './services/route.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FlightBooking';
+  constructor(private routerService:RouteService){}
+  ngOnInit(){
+    this.routerService.goToRegister();
+  }
 }

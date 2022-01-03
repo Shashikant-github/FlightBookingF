@@ -1,0 +1,6 @@
+p{text-align: center;}
+div{
+    display: flex;
+    
+    justify-content: space-around;
+}
