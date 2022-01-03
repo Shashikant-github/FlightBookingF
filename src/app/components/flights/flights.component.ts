@@ -17,21 +17,8 @@ export class FlightsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.flightService.getAllFlights().subscribe(res=>{
-      console.log(`Data from service: ${res}`);
-       this.flights=res;
-     console.log(res);
-     })
+    
   }
-  addFlight(){
-      console.log(`Added Flight Name : ${this.flightObj?.name}`);
-      this.flightService.addFlight(this.flightObj).subscribe(res=>{
-        this.flights?.push(this.flightObj);
-        console.log("Flight Added");
-      })
-      
-      
-
-  }
+ 
 
 }

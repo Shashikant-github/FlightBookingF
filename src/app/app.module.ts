@@ -23,8 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { AddFlightComponent } from './components/components/flights/add-flight/add-flight.component';
+
 import { DisplayFlightComponent } from './components/flights/display-flight/display-flight.component';
+import { AddFlightComponent } from './components/flights/add-flight/add-flight.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { DisplayFlightComponent } from './components/flights/display-flight/disp
     SearchFlightComponent,
     FlightsComponent,
     AddFlightComponent,
-    DisplayFlightComponent
+    DisplayFlightComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+h1{
+    background-color: aqua;
+    text-align: center;
+    color:black;
+}
+.headerLink{  
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

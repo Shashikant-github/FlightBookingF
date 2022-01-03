@@ -1,1 +1,20 @@
 <p>add-flight works!</p>
+<div>
+    <mat-expansion-panel class="panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="title">
+                Add Flight Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Flight name</mat-label>
+            <input matInput [(ngModel)]="flightObj.name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label class="title">Flight Price</mat-label>
+            <input matInput [(ngModel)]="flightObj.price">
+        </mat-form-field>
+        <button (click)="addFlight()">Add</button>
+    </mat-expansion-panel>
+</div>
+
