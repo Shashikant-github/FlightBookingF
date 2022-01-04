@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchFlightComponent } from './search-flight.component';
+import { CancelComponent } from './cancel.component';
 
-describe('SearchFlightComponent', () => {
-  let component: SearchFlightComponent;
-  let fixture: ComponentFixture<SearchFlightComponent>;
+describe('CancelComponent', () => {
+  let component: CancelComponent;
+  let fixture: ComponentFixture<CancelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchFlightComponent ]
+      declarations: [ CancelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchFlightComponent);
+    fixture = TestBed.createComponent(CancelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

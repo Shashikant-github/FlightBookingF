@@ -1,3 +1,9 @@
-p{
-    text-align: center;
+
+.loginForm{
+    display:flex;
+    justify-content: center;
+}
+#btn-register{
+    align-items: center;
+    margin-left: 300px;
 }

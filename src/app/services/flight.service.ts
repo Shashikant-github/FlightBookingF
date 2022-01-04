@@ -8,17 +8,27 @@ import { Flight } from '../models/flight';
 })
 export class FlightService {
  
+ 
+ 
   //  flight_URL?:string="http://localhost:3000/flights";
   constructor(private httpClient:HttpClient) {
   //  this.flight_URL=
    }
   
-  getAllFlights():Observable<Array<Flight>>{
-    return this.httpClient.get<Array<Flight>>(`http://localhost:3000/flights`);
+  getAllFlights():Observable<Flight[]>{
+    return this.httpClient.get<Flight[]>(`https://localhost:5011/v1.0/api/FlightApp/Airline/GetAllAirlines`);
   }
-  addFlight(flightObj:Flight):Observable<Flight> {
-    return this.httpClient.post(`http://localhost:3000/flights`,flightObj);
+  addFlight(flightObj:Flight):Observable<boolean> {
+    return this.httpClient.post<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/AddAirline`,flightObj);
   }
+  deleteAirline(airlineName: string):Observable<boolean> {
+    return this.httpClient.delete<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/DeleteAirline/`+airlineName);
+
+  }
+  // updateAirline(airlineName: string, airline: Flight):Observable<boolean> {
+  //   return true;
+  //   return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/UpdateAirlineStatus/Go`+airlineName+``+airline);
+  // }
 
 
   

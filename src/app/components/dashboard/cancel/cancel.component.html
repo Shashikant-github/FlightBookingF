@@ -1,0 +1,54 @@
+<p>cancel works!</p>
+<h1>
+    <form class="cancelForm">
+      <div class="form-group">
+        <label for="exampleInputPNR">Enter PNR to Cancel Ticket</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputPNR"
+          placeholder="Please Enter PNR no."
+          name="cancelPNR"
+          [(ngModel)]="cancelPNR"
+        />
+      </div>
+      <div>
+        <br />
+        <button type="button" class="btn btn-primary" (click)="cancelByPNR()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </h1>
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">PNR</th>
+          <th scope="col">PassengerName</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Airline</th>
+          <th scope="col">Date Of Journey</th>
+          <th scope="col">Date Of Booking</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Ticket Status</th>
+        </tr>
+      </thead>
+        <tbody>
+        <tr>
+          <td>{{ book.bookingPNR }}</td>
+          <td>{{ book.bookingPassengerName }}</td>
+          <td>{{ book.mobile }}</td>
+          <td>{{ book.source }}</td>
+          <td>{{ book.destination }}</td>
+          <td>{{ book.airline }}</td>
+          <td>{{ book.dateOfJourney }}</td>
+          <td>{{ book.bookingDate }}</td>
+          <td>{{ book.emailID }}</td>
+          <td>{{ book.ticketStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

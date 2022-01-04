@@ -17,19 +17,23 @@ export class AddFlightComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.flightService.getAllFlights().subscribe(res=>{
-      console.log(`Data from service: ${res}`);
-       this.flights=res;
-     console.log(res);
-     })
+    // this.flightService.getAllFlights().subscribe(res=>{
+    //   console.log(`Data from service: ${res}`);
+    //    this.flights=res;
+    //  console.log(res);
+    //  })
   }
   addFlight(){
-    console.log(`Added Flight Name : ${this.flightObj?.name}`);
+    console.log(`Added Flight Name : ${this.flightObj.airlineName}`);
+    this.flightObj.delete=false;
+    this.flightObj.status="Active";
+    console.log(this.flightObj.category);
+    console.log(this.flightObj.status);
     this.flightService.addFlight(this.flightObj).subscribe(res=>{
-      this.flights?.push(this.flightObj);
-      console.log("Flight Added");
-      alert("Flight Added");
-    })
+     //this.flights?.push(this.flightObj);
+     // console.log("Flight Added");
+      // alert("Flight Added");
+    },(err)=>{console.log(err);})
     
     
 

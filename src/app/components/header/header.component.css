@@ -1,8 +1,8 @@
-h1{
+/* h1{
     background-color: aqua;
     text-align: center;
     color:black;
-}
+} */
 .headerLink{  
     display: flex;
     flex-direction:row;
@@ -13,6 +13,12 @@ h1{
     height:50px;
     border-radius: 5px;
     background-color: aqua;
+    margin:auto;
+    text-transform: uppercase;
+}
+h1{
+    color:brown;
+    text-transform: uppercase;
 }
 /* a{
     height:45px;

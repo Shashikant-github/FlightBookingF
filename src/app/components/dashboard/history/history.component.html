@@ -1,0 +1,55 @@
+<p>history works!</p>
+<h1>
+    <form class="historyForm">
+      <div class="form-group">
+        <label for="exampleInputPNR">Get All Booking Details</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmailID"
+          placeholder="Please Enter emailID"
+          name="bookingEmail"
+          [(ngModel)]="bookingEmail"
+        />
+      </div>
+      <div>
+        <br />
+        <button type="button" class="btn btn-primary" (click)="historyByEmail()">
+            Submit
+        </button>
+      </div>
+    </form>
+  </h1>
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">PNR</th>
+          <th scope="col">PassengerName</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Airline</th>
+          <th scope="col">Date Of Journey</th>
+          <th scope="col">Date Of Booking</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Ticket Status</th>
+        </tr>
+      </thead>
+
+        <tbody *ngFor="let booking of book">
+        <tr>
+          <td>{{ booking.bookingPNR }}</td>
+          <td>{{ booking.bookingPassengerName }}</td>
+          <td>{{ booking.mobile }}</td>
+          <td>{{ booking.source }}</td>
+          <td>{{ booking.destination }}</td>
+          <td>{{ booking.airline }}</td>
+          <td>{{ booking.dateOfJourney }}</td>
+          <td>{{ booking.bookingDate }}</td>
+          <td>{{ booking.emailID }}</td>
+          <td>{{ booking.ticketStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

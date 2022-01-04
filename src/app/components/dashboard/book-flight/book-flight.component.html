@@ -1,0 +1,115 @@
+<p>book-flight works!</p>
+
+
+<div class="bookingForm">
+    <!-- bookingPNR?:string;
+    bookingPassengerName?:string;
+    mobile?:string;
+    source?:string;
+    destination?:string;
+    airline?:string;
+    dateOfJourney?:Date;
+    emailID?:string;
+    ticketStatus?:string; -->
+    
+  <form #bookForm="ngForm" (ngSubmit)="bookingDetails(bookForm)">
+    <div class="form-group">
+      <label for="exampleInputPassenger">Passenger Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassenger"
+        placeholder="Please Enter Passenger Name"
+        name="bookingPassengerName"
+        [(ngModel)]="bookTicket.bookingPassengerName"
+      />
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputMobile">Mobile no.</label>
+      <input
+        type="string"
+        name="mobile"
+        class="form-control"
+        id="exampleInputMobile"
+        placeholder="Please Enter Mobile No."
+        [(ngModel)]="bookTicket.mobile"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputSource">Source</label>
+
+      <input
+        type="text"
+        name="source"
+        class="form-control"
+        id="exampleInputSource"
+        placeholder="Please Enter Source"
+        [(ngModel)]="bookTicket.source"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputDestination">Destination</label>
+      <input
+        type="text"
+        name="destination"
+        class="form-control"
+        id="exampleInputDestination"
+        placeholder="Please Enter Destination"
+        [(ngModel)]="bookTicket.destination"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputAirline">Airline</label>
+      <input
+        type="text"
+        name="airline"
+        class="form-control"
+        id="exampleInputAirline"
+        placeholder="Please Enter airline"
+        [(ngModel)]="bookTicket.airline"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputDateOfJourney">Date Of Journey</label>
+      <input
+        type="datetime"
+        name="dateOfJourney"
+        class="form-control"
+        id="exampleInputDateOfJourney"
+        placeholder="Enter Date Of Journey"
+        [(ngModel)]="bookTicket.dateOfJourney"
+      />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmailID">emailID</label>
+        <input
+          type="email"
+          name="emailID"
+          class="form-control"
+          id="exampleInputEmailID"
+          placeholder="Please Enter emailID"
+          [(ngModel)]="bookTicket.emailID"
+        />
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputAddress">ticketStatus</label>
+        <input
+          type="text"
+          name="address"
+          class="form-control"
+          id="exampleInputAddress"
+          placeholder="Please Enter Address"
+          [(ngModel)]="bookTicket.ticketStatus"
+        />
+      </div> -->
+    <div class="form-group">
+      <br />
+      <button type="submit" class="btn btn-primary">Book</button>
+
+      <!-- <a routerLink="/bookFlight">Click here to Book Another Ticket</a> -->
+    </div>
+  </form>
+</div>
+
+

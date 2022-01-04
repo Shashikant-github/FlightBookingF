@@ -1,10 +1,39 @@
-<p>display-flight works!</p>
-<div *ngFor="let flight of flights" class="cards-layout">
-    <div class="card-flight">
-        <h1>{{flight.name}}</h1>
 
-        <h1>{{flight.price}} </h1>
+<p>{{customExMessage}}</p>
+<!-- <div *ngFor="let flight of flights" class="cards-layout">
+    <div class="card-flight">
+        <h1>{{flight.AirlineName}}</h1>
+        {{flight.Category}}
+
+        <h1>{{flight.TicketPrice}} </h1>
     </div>
 
-</div>
+</div> -->
 
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">AirlineName</th>
+        <th scope="col">Category</th>
+        <th scope="col">Ticket Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <!-- <th scope="row">1</th> -->
+        <td>{{flight.airlineName}}</td>
+        <td>{{flight.category}}</td>
+        <td>{{flight.ticketPrice}}</td>
+        <td><button type="submit" class="btn btn-primary" routerLink="/bookFlight">Book Ticket</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- public int AirlineId { get; set; }
+        public string AirlineName { get; set; }
+        public string Category { get; set; }
+        public double TicketPrice { get; set; }
+        public string Status { get; set; }
+        public bool Delete { get; set; }
+        #endregion -->

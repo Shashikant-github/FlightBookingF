@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookFlightComponent } from './book-flight.component';
+import { AddBulkComponent } from './add-bulk.component';
 
-describe('BookFlightComponent', () => {
-  let component: BookFlightComponent;
-  let fixture: ComponentFixture<BookFlightComponent>;
+describe('AddBulkComponent', () => {
+  let component: AddBulkComponent;
+  let fixture: ComponentFixture<AddBulkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookFlightComponent ]
+      declarations: [ AddBulkComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookFlightComponent);
+    fixture = TestBed.createComponent(AddBulkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

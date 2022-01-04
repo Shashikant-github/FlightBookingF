@@ -1,33 +1,96 @@
 <p>User Registration Form</p>
 <div class="registerForm">
-<form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
+  <form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
     <div class="form-group">
-        <label for="exampleInputText">Username</label>
-        <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp"
-            placeholder="Please Enter Username" name="userName" [(ngModel)]="registeredUser.UserName">
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      <label for="exampleInputText">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputText"
+        
+        placeholder="Please Enter Username"
+        name="userName"
+        [(ngModel)]="registeredUser.UserName"
+      />
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword">Password</label>
-        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
-            placeholder="Please Enter Password" [(ngModel)]="registeredUser.Password">
+      <label for="exampleInputPassword">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Please Enter Password"
+        [(ngModel)]="registeredUser.Password"
+      />
     </div>
+    <div class="form-group">
+      <label for="exampleInputEmail">EmailID</label>
+
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="exampleInputEmail"
+        placeholder="Please Enter EmailID"
+        [(ngModel)]="registeredUser.emailID"
+      />
+    </div>
+    <!-- <div class="form-group mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword">
+        </div>
+      </div> -->
 
     <div class="form-group">
-        <label for="exampleInputCity">City</label>
-        <input type="text" name="city" class="form-control" id="exampleInputCity" placeholder="Please Enter City"
-            [(ngModel)]="registeredUser.City">
+      <label for="exampleInputMobile">Mobile</label>
+      <input
+        type="text"
+        name="mobile"
+        class="form-control"
+        id="exampleInputMobile"
+        placeholder="Please Enter Mobile No."
+        [(ngModel)]="registeredUser.Mobile"
+      />
     </div>
     <div class="form-group">
-        <br>
-    <button type="submit" class="btn btn-primary">Register</button>
-    <a routerLink="/login">Click here to Login</a>
+      <label for="exampleInputCity">City</label>
+      <input
+        type="text"
+        name="city"
+        class="form-control"
+        id="exampleInputCity"
+        placeholder="Please Enter City"
+        [(ngModel)]="registeredUser.City"
+      />
     </div>
-</form>
+    <div class="form-group">
+      <label for="exampleInputAddress">Address</label>
+      <input
+        type="text"
+        name="address"
+        class="form-control"
+        id="exampleInputAddress"
+        placeholder="Please Enter Address"
+        [(ngModel)]="registeredUser.Address"
+      />
+    </div>
+    <div class="form-group">
+      <br />
+      <button type="submit" class="btn btn-primary">Register</button>
 
+      <a routerLink="/login">Click here to Login</a>
+    </div>
+  </form>
 </div>
 
-<!-- UserName?:string;
+<!--UserName?:string;
 City?:string;
 Password?:string;
-role?:string; -->
+role?:string;
+public int Mobile { get; set; }
+        public string emailID { get; set; }
+        public string Address { get; set; }
+        #endregion -->

@@ -1,0 +1,13 @@
+
+p{text-align: center;
+    color:brown;
+    text-transform: uppercase;
+}
+#btn-register{
+    align-items: center;
+    margin-left: 300px;
+}
+.bookingForm{
+    display:flex;
+    justify-content: center;
+}

@@ -26,7 +26,9 @@ registerUserDetails(regForm:NgForm){
   this.registeredUser.role="Reader";
   this.userService.registerUser(this.registeredUser).subscribe(res=>{
     console.log(`Response after Registration:${res}`);
+    
   })
+  alert("Registered Successfully");
 regForm.resetForm();
 this.routerService.goToLogin();
 }

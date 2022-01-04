@@ -15,8 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './routing/app-routing/app-routing.module';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BookFlightComponent } from './components/book-flight/book-flight.component';
-import { SearchFlightComponent } from './components/search-flight/search-flight.component';
+import { BookFlightComponent } from './components/dashboard/book-flight/book-flight.component';
+
 import { FlightsComponent } from './components/flights/flights.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +29,14 @@ import { AddFlightComponent } from './components/flights/add-flight/add-flight.c
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PnrDetailsComponent } from './components/dashboard/pnr-details/pnr-details.component';
+import { HistoryComponent } from './components/dashboard/history/history.component';
+import { CancelComponent } from './components/dashboard/cancel/cancel.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { UpdateAirlineComponent } from './components/dashboard-admin/update-airline/update-airline.component';
+import { DeleteAirlineComponent } from './components/dashboard-admin/delete-airline/delete-airline.component';
+import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk.component';
 
 
 @NgModule({
@@ -39,13 +47,21 @@ import { LogoutComponent } from './components/logout/logout.component';
     RegisterComponent,
     DashboardComponent,
     BookFlightComponent,
-    SearchFlightComponent,
+    
     FlightsComponent,
     AddFlightComponent,
     DisplayFlightComponent,
     HeaderComponent,
     ProfileComponent,
-    LogoutComponent
+    LogoutComponent,
+    FooterComponent,
+    PnrDetailsComponent,
+    HistoryComponent,
+    CancelComponent,
+    DashboardAdminComponent,
+    UpdateAirlineComponent,
+    DeleteAirlineComponent,
+    AddBulkComponent
   ],
   imports: [
     BrowserModule,

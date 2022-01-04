@@ -4,4 +4,8 @@ export class User {
     City?:string;
     Password?:string;
     role?:string;
+    emailID?:string;
+    Mobile?:string;
+    Address?:string;
+    
 }
