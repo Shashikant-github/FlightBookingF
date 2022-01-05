@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { UserInfo } from 'src/app/models/user-info';
+
 import { RouteService } from 'src/app/services/route.service';
+import { TokenService } from 'src/app/services/token.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,7 +15,7 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit {
 
   userInfo: UserInfo;
-  constructor(private userService: UserService, private routeService:RouteService) {
+  constructor(private userService: UserService,private tokenService:TokenService,private routeService:RouteService) {
     this.userInfo = new UserInfo();
   }
 
@@ -27,15 +29,21 @@ export class LoginComponent implements OnInit {
     //this.userInfo.UserIPassword = "11";
     console.log(this.userInfo.UserIName);
     console.log(this.userInfo.UserIPassword);
+
     this.userService.loginUser(this.userInfo).subscribe(res=>{
       console.log(`Token Generated:${res}`);
+    
+    
+
       let jsonObj=JSON.stringify(res);
     console.log(jsonObj);
-      let parsedJsonRes=JSON.parse(jsonObj);
-     // console.log(`JSON Token: ${parsedJsonRes['token']}`);
+      const parsedJsonRes=JSON.parse(jsonObj);
+     console.log(`JSON Token: ${parsedJsonRes['token']}`);
       localStorage.setItem('MyToken',parsedJsonRes['token']);
       localStorage.setItem('userName',parsedJsonRes['username']);
       localStorage.setItem('userRole',parsedJsonRes['userrole']);
+      this.tokenService.token=localStorage.getItem('MyToken');
+
       if(localStorage.getItem('userRole')=="Admin"){
         this.routeService.goToDashBoardAdmin();
       }

@@ -17,10 +17,14 @@ import { DashboardAdminComponent } from 'src/app/components/dashboard-admin/dash
 import { UpdateAirlineComponent } from 'src/app/components/dashboard-admin/update-airline/update-airline.component';
 import { DeleteAirlineComponent } from 'src/app/components/dashboard-admin/delete-airline/delete-airline.component';
 import { AddBulkComponent } from 'src/app/components/dashboard-admin/add-bulk/add-bulk.component';
+import { HomeComponent } from 'src/app/components/home/home.component';
 
 const routes:Routes=[
+  {path:'home',component:HomeComponent},
+  
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
+ 
 
   {path:"logout",component:LogoutComponent,canActivate:[AuthGuard]},
  

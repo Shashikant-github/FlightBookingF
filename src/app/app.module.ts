@@ -18,7 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BookFlightComponent } from './components/dashboard/book-flight/book-flight.component';
 
 import { FlightsComponent } from './components/flights/flights.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -37,6 +37,10 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
 import { UpdateAirlineComponent } from './components/dashboard-admin/update-airline/update-airline.component';
 import { DeleteAirlineComponent } from './components/dashboard-admin/delete-airline/delete-airline.component';
 import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk.component';
+import { HomeComponent } from './components/home/home.component';
+import { TokenService } from './services/token.service';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { DisplayFlightsAComponent } from './components/dashboard-admin/display-flights-a/display-flights-a.component';
 
 
 @NgModule({
@@ -61,7 +65,9 @@ import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk
     DashboardAdminComponent,
     UpdateAirlineComponent,
     DeleteAirlineComponent,
-    AddBulkComponent
+    AddBulkComponent,
+    HomeComponent,
+    DisplayFlightsAComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +88,10 @@ import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk
    FormsModule
   
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

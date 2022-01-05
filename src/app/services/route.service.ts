@@ -8,6 +8,9 @@ export class RouteService {
   
 
   constructor(private route: Router) {}
+  goToHome(){
+    this.route.navigate(['home']);
+  }
   goToDashboard() {
     this.route.navigate(['dashboard']);
   }

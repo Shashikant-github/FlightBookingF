@@ -8,8 +8,6 @@ import { Flight } from '../models/flight';
 })
 export class FlightService {
  
- 
- 
   //  flight_URL?:string="http://localhost:3000/flights";
   constructor(private httpClient:HttpClient) {
   //  this.flight_URL=
@@ -29,6 +27,15 @@ export class FlightService {
   //   return true;
   //   return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/UpdateAirlineStatus/Go`+airlineName+``+airline);
   // }
+  blockAirline(airlineNam: string, flightObj:Flight):Observable<boolean>{
+    console.log(`${airlineNam} form service`)
+    return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/BlockAirline/`+airlineNam, flightObj);
+    //return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/BlockAirline/`+airlineNam);
+  }
+  getAllFlightsA():Observable<Flight[]> {
+    return this.httpClient.get<Flight[]>(`https://localhost:5011/v1.0/api/FlightApp/Airline/GetAllAirlinesAdmin`);
+    //throw new Error('Method not implemented.');
+  }
 
 
   

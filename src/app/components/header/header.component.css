@@ -6,11 +6,11 @@
 .headerLink{  
     display: flex;
     flex-direction:row;
-    align-items: center;
+    align-items:flex;
     justify-content: space-around;
     flex-wrap: wrap;
    border:black 2px solid; 
-    height:50px;
+    height:40px;
     border-radius: 5px;
     background-color: aqua;
     margin:auto;

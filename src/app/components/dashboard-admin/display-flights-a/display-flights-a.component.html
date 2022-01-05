@@ -1,0 +1,30 @@
+<p>display-flights-a works!</p>
+<p>{{customExMessage}}</p>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">AirlineName</th>
+        <th scope="col">Category</th>
+        <th scope="col">Ticket Price</th>  
+        <th scope="col">Status</th>
+        <th scope="col">Deleted</th>
+        <th scope="col">Block/Unblock</th>
+        <!-- <th scope="col">Unblock</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <!-- <th scope="row">1</th> -->
+        <td>{{flight.airlineName}}</td>
+        <td>{{flight.category}}</td>
+        <td>{{flight.ticketPrice}}</td>
+        <td>{{flight.status}}</td>
+        <td>{{flight.delete}}</td>
+        <td><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineName)">{{buttonName}}</button></td>
+        <!-- <td><button type="submit" class="btn btn-primary" (click)="blockAirline(flight.airlineName)">Unblock</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  <!-- *ngIF="(flight.status="Inactive")" -->
+  <!-- [(ngModel)]="airlineName=flight.airlineName" -->
