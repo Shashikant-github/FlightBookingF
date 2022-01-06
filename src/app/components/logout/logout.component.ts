@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-logout',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toast:ToastrService) { }
 
   ngOnInit(): void {
+    this.toast.success("User Logged Out");
     localStorage.clear();
+
     //localStorage.removeItem('MyToken');
   }
 

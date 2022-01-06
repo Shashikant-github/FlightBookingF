@@ -17,6 +17,9 @@ export class RouteService {
   goToLogin() {
     this.route.navigate(['login']);
   }
+  goToLogout(){
+    this.route.navigate(['logout']);
+  }
   goToRegister() {
     this.route.navigate(['register']);
   }

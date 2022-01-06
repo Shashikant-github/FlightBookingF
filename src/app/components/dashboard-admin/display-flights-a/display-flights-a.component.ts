@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from 'src/app/models/flight';
 import { FlightService } from 'src/app/services/flight.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-display-flights-a',
@@ -13,9 +14,11 @@ export class DisplayFlightsAComponent implements OnInit {
   flights1?:Flight[];
   flightObj:Flight;
   customExMessage:string="";
+  public show:boolean = true;
+  public buttonName:any = 'Show';
  
-  buttonName?:string="Submit";
-  constructor(private flightService: FlightService) {
+  //buttonName?:string="Submit";
+  constructor(private flightService: FlightService, private toastr: ToastrService) {
    this.flightObj=new Flight();
    //this.buttonName="";
    }
@@ -28,7 +31,12 @@ export class DisplayFlightsAComponent implements OnInit {
         
         // this.flights1 = res;
         // this.flights1.forEach((flight)=>{
-        //   if(flight.status=="Active")
+        //  if(flight.status=="Active"){
+        //   flight.status="Block";
+
+        //  }
+          
+
         //   this.buttonName="Block";
         //   else
         //   this.buttonName="Unblock";
@@ -48,13 +56,24 @@ export class DisplayFlightsAComponent implements OnInit {
       console.log(res);
         if(res){
         alert("Airline Blocked");
+        this.toastr.warning("Airline Blocked");
         this.ngOnInit();
       }
       else{
         alert("Airline Unblocked");
+        this.toastr.success("Airline Unblocked");
         this.ngOnInit();
       }
     });
   }
+  // toggle() {
+  //   this.show = !this.show;
+
+  //   // CHANGE THE NAME OF THE BUTTON.
+  //   if(this.show)  
+  //     this.buttonName = "Hide";
+  //   else
+  //     this.buttonName = "Show";
+  // }
 
 }

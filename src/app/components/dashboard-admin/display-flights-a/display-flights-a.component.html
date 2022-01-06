@@ -21,10 +21,11 @@
         <td>{{flight.ticketPrice}}</td>
         <td>{{flight.status}}</td>
         <td>{{flight.delete}}</td>
-        <td><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineName)">{{buttonName}}</button></td>
+        <td><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineName)" >{{flight.status}}</button></td>
         <!-- <td><button type="submit" class="btn btn-primary" (click)="blockAirline(flight.airlineName)">Unblock</button></td> -->
       </tr>
     </tbody>
   </table>
+  <!-- *ngIf="show" (click)="toggle()" -->
   <!-- *ngIF="(flight.status="Inactive")" -->
   <!-- [(ngModel)]="airlineName=flight.airlineName" -->

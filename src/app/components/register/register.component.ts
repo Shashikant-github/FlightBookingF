@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
 import { RouteService } from 'src/app/services/route.service';
 import { UserService } from 'src/app/services/user.service';
@@ -13,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class RegisterComponent implements OnInit {
 
   registeredUser:User;
-  constructor(private userService:UserService,private routerService:RouteService) {
+  constructor(private userService:UserService,private routerService:RouteService, private toast:ToastrService) {
     this.registeredUser=new User();
    }
 
@@ -26,7 +27,7 @@ registerUserDetails(regForm:NgForm){
   this.registeredUser.role="Reader";
   this.userService.registerUser(this.registeredUser).subscribe(res=>{
     console.log(`Response after Registration:${res}`);
-    
+    this.toast.success("User Registered Successfully");
   })
   alert("Registered Successfully");
 regForm.resetForm();

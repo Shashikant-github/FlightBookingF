@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
 
 import { UserInfo } from 'src/app/models/user-info';
 
 import { RouteService } from 'src/app/services/route.service';
-import { TokenService } from 'src/app/services/token.service';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,10 +15,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  //public isLoggedIn$: BehaviorSubject<boolean>;
   userInfo: UserInfo;
-  constructor(private userService: UserService,private tokenService:TokenService,private routeService:RouteService) {
+  public token:any;
+  constructor(private userService: UserService,private toaster:ToastrService,private routeService:RouteService) {
     this.userInfo = new UserInfo();
+   
   }
 
   ngOnInit(): void {
@@ -32,25 +36,33 @@ export class LoginComponent implements OnInit {
 
     this.userService.loginUser(this.userInfo).subscribe(res=>{
       console.log(`Token Generated:${res}`);
-    
-    
-
-      let jsonObj=JSON.stringify(res);
-    console.log(jsonObj);
-      const parsedJsonRes=JSON.parse(jsonObj);
-     console.log(`JSON Token: ${parsedJsonRes['token']}`);
-      localStorage.setItem('MyToken',parsedJsonRes['token']);
-      localStorage.setItem('userName',parsedJsonRes['username']);
-      localStorage.setItem('userRole',parsedJsonRes['userrole']);
-      this.tokenService.token=localStorage.getItem('MyToken');
-
-      if(localStorage.getItem('userRole')=="Admin"){
-        this.routeService.goToDashBoardAdmin();
-      }
-      else{
-        this.routeService.goToDashboard();
-      }
+      // let jsonObj=JSON.stringify(res);
+      // console.log(jsonObj);
+      this.token=res; 
+      console.log(` token ${this.token}`);
+    const res1=this.userService.authUser(this.token)
+    console.log(`Token=${res1}`);
+    if(localStorage.getItem('userRole')=="Admin"){
+      this.routeService.goToDashBoardAdmin();
+    }
+    else{
+      this.routeService.goToDashboard();
+    }
     })
+    
+    
+    
+      //let jsonObj=JSON.stringify(res);
+    // console.log(jsonObj);
+    //const parsedJsonRes=JSON.parse(jsonObj);
+    //  console.log(`JSON Token: ${parsedJsonRes['token']}`);
+    //   localStorage.setItem('MyToken',parsedJsonRes['token']);
+    //   localStorage.setItem('userName',parsedJsonRes['username']);
+    //   localStorage.setItem('userRole',parsedJsonRes['userrole']);
+    //   this.tokenService.token=localStorage.getItem('MyToken');
 
+  }
+  show(){
+    this.toaster.success("User Logged in Successfully!");
   }
 }

@@ -4,8 +4,8 @@
     <h1>Flight Booking</h1>
     <a routerLink="home">Home</a>
     <a routerLink="register">Register</a>
-    <a routerLink="login">Login</a>
-    <a routerLink="logout">Logout</a>
+    <a (click)="login()" *ngIf='!(authService.isLoggedIn$|async)' (click)='authService.login()'>Login</a>
+    <a (click)="logout()" *ngIf='authService.isLoggedIn$|async' (click)='authService.logout()'>Logout</a>
     
     <!-- <a routerLink="dashboard">Dashboard</a>
     <a routerLink="logout">Logout</a>
