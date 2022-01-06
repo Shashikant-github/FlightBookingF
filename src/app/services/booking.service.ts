@@ -8,6 +8,7 @@ import { Booking } from '../models/booking';
 })
 
 export class BookingService {
+ 
   
   booking?:Booking;
   constructor(private httpClient: HttpClient) {
@@ -32,6 +33,10 @@ export class BookingService {
   }
   cancelByPNR(bookingPNR: string):Observable<Booking> {
     return this.httpClient.delete<Booking>(`https://localhost:5021/v1.0/api/FlightApp/Booking/CancelBookingByPNR/`+bookingPNR);
+   
+  }
+  allBooking():Observable<Booking[]> {
+    return this.httpClient.get<Booking[]>(`https://localhost:5021/v1.0/api/FlightApp/Booking/GetAllBookings`);
    
   }
 }

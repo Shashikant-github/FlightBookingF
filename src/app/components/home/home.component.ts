@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private service:ToastrService) { }
 
   ngOnInit(): void {
-this.service.info("Welcome to Fligh Booking!")
+// this.service.info("Welcome to Flight Booking!")
   }
 
 }

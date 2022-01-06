@@ -33,7 +33,7 @@ export class DisplayFlightComponent implements OnInit {
       },
       error: (e) => {
         this.customExMessage = e.message;
-      },
+      }
     });
   }
   BookTicket() {

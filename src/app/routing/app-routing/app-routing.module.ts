@@ -18,6 +18,7 @@ import { UpdateAirlineComponent } from 'src/app/components/dashboard-admin/updat
 import { DeleteAirlineComponent } from 'src/app/components/dashboard-admin/delete-airline/delete-airline.component';
 import { AddBulkComponent } from 'src/app/components/dashboard-admin/add-bulk/add-bulk.component';
 import { HomeComponent } from 'src/app/components/home/home.component';
+import { AllBookingComponent } from 'src/app/components/dashboard-admin/all-booking/all-booking.component';
 
 const routes:Routes=[
   {path:'home',component:HomeComponent},
@@ -43,7 +44,8 @@ const routes:Routes=[
   {path:'dashboardAdmin/update',component:UpdateAirlineComponent},
   {path:'dashboardAdmin/delete',component:DeleteAirlineComponent},
   {path:"addFlight",component:AddFlightComponent},
-  {path:"dashboardAdmin/AddBulk",component:AddBulkComponent}
+  {path:"dashboardAdmin/AddBulk",component:AddBulkComponent},
+  {path:"allBooking", component:AllBookingComponent}
 ];
 
 @NgModule({

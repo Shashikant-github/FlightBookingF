@@ -10,7 +10,10 @@
 .title{
     color:black;
 }
-.example-action-buttons {
+.disable_ripple{
+  background-color:darkseagreen;
+  }
+/* .example-action-buttons {
     padding-bottom: 20px;
   }
   
@@ -26,4 +29,4 @@
   
   .example-headers-align .mat-form-field + .mat-form-field {
     margin-left: 8px;
-  }
+  } */

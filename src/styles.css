@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { margin:0;
+  padding:0;
+  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+background-image: url("https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg");
+height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
 

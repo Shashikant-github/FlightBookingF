@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Flight } from 'src/app/models/flight';
 import { FlightService } from 'src/app/services/flight.service';
 
@@ -12,7 +13,7 @@ export class AddFlightComponent implements OnInit {
   flightObj:Flight;
   flights?:Array<Flight>;
 
-  constructor(private flightService:FlightService) {
+  constructor(private flightService:FlightService, private toaster:ToastrService) {
     this.flightObj=new Flight();
    }
 
@@ -32,8 +33,8 @@ export class AddFlightComponent implements OnInit {
     this.flightService.addFlight(this.flightObj).subscribe(res=>{
      //this.flights?.push(this.flightObj);
      // console.log("Flight Added");
-      // alert("Flight Added");
-    },(err)=>{console.log(err);})
+      this.toaster.success("Flight Added");
+    });
     
     
 

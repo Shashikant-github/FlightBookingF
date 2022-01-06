@@ -1,4 +1,4 @@
-<p>history works!</p>
+
 <h1>
     <form class="historyForm">
       <div class="form-group">
@@ -20,7 +20,25 @@
       </div>
     </form>
   </h1>
-  <div>
+
+  <div class="cards-layout" >
+    <div class="card" style="width: 20rem;" *ngFor="let booking of book">
+      <img class="card-img-top" src="https://www.airport-technology.com/wp-content/uploads/sites/14/2021/03/pexels-jeshootscom-1201995-e1615985382761.jpg" alt="BookingHistory">
+      <div class="card-body">
+        <h5 class="card-title">PNR: {{ booking.bookingPNR }}</h5>
+        <h5 class="card-title">PassengerName: {{ booking.bookingPassengerName}}</h5>
+        <h5 class="card-title">Mobile No.: {{ booking.mobile }}</h5>
+        <h5 class="card-title">Airline: {{ booking.airline }}</h5>
+        <h5 class="card-title">Source: {{ booking.source }}</h5>
+        <h5 class="card-title">Destination: {{ booking.destination }}</h5>
+        <h5 class="card-title">Date Of Journey: {{ booking.dateOfJourney }}</h5>
+        <h5 class="card-title">Date Of Booking: {{ booking.bookingDate }}</h5>
+        <h5 class="card-title">Email ID: {{ booking.emailID }}</h5>
+        <h5 class="card-title">Ticket Status: {{ booking.ticketStatus }}</h5>
+      </div>
+    </div>
+    </div>
+  <!-- <div>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -52,4 +70,4 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->

@@ -8,20 +8,15 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+isLogged?:boolean;
   constructor(public authService:UserService, private route:RouteService) { }
 
   ngOnInit(): void {
-    
+    if(localStorage.getItem('UserName')!=null){
+     this.isLogged=true;
+    }
+    else{
+      this.isLogged=false;
+    }
   }
-  login(){
-this.route.goToLogin();
-  }
-  logout(){
-    this.route.goToLogout();
-  }
-
-      
-  
-
 }

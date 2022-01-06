@@ -1,3 +1,4 @@
+
 <h1>
   <form class="pnrForm">
     <div class="form-group">
@@ -19,7 +20,25 @@
     </div>
   </form>
 </h1>
-<div>
+<div class="cards-layout">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://www.pnrstatus.io/wp-content/uploads/2020/03/cropped-screenshot-2.png" alt="BookingAdmin">
+    <div class="card-body">
+      <h5 class="card-title">PNR: {{ book.bookingPNR }}</h5>
+      <h5 class="card-title">PassengerName: {{ book.bookingPassengerName}}</h5>
+      <h5 class="card-title">Mobile No.: {{ book.mobile }}</h5>
+      <h5 class="card-title">Airline: {{ book.airline }}</h5>
+      <h5 class="card-title">Source: {{ book.source }}</h5>
+      <h5 class="card-title">Destination: {{ book.destination }}</h5>
+      <h5 class="card-title">Date Of Journey: {{ book.dateOfJourney }}</h5>
+      <h5 class="card-title">Date Of Booking: {{ book.bookingDate }}</h5>
+      <h5 class="card-title">Email ID: {{ book.emailID }}</h5>
+      <h5 class="card-title">Ticket Status: {{ book.ticketStatus }}</h5>
+    </div>
+  </div>
+  </div>
+
+<!-- <div>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -50,7 +69,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
   <!-- bookingPNR?:string;
     bookingPassengerName?:string;

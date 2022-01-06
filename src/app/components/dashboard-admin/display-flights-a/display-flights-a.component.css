@@ -1,0 +1,9 @@
+p{
+    text-align: center;
+    color:red;
+}
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:space-around;
+} 

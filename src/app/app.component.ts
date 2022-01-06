@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'FlightBooking';
   constructor(private routerService:RouteService){}
   ngOnInit(){
-    this.routerService.goToHome();
+     this.routerService.goToHome();
   }
 }

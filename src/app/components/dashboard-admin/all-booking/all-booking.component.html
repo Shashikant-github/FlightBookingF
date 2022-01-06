@@ -1,0 +1,54 @@
+<app-admin-nav></app-admin-nav>
+<p>{{customExMessage}}</p>
+<div class="cards-layout">
+  <div class="card" style="width: 18rem;"  *ngFor="let booking of book">
+    <img class="card-img-top" src="https://www.travelopro.com/public/images/contact/banner-7.png" alt="BookingAdmin">
+    <div class="card-body">
+      <h5 class="card-title">PNR: {{ booking.bookingPNR }}</h5>
+      <h5 class="card-title">PassengerName: {{ booking.bookingPassengerName}}</h5>
+      <h5 class="card-title">Mobile No.: {{ booking.mobile }}</h5>
+      <h5 class="card-title">Airline: {{ booking.airline }}</h5>
+      <h5 class="card-title">Source: {{ booking.source }}</h5>
+      <h5 class="card-title">Destination: {{ booking.destination }}</h5>
+      <h5 class="card-title">Date Of Journey: {{ booking.dateOfJourney }}</h5>
+      <h5 class="card-title">Date Of Booking: {{ booking.bookingDate }}</h5>
+      <h5 class="card-title">Email ID: {{ booking.emailID }}</h5>
+      <h5 class="card-title">Ticket Status: {{ booking.ticketStatus }}</h5>
+    </div>
+  </div>
+  </div>
+
+
+
+<!-- <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th scope="col">#</th> 
+        <th scope="col">PNR</th>
+        <th scope="col">PassengerName</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Airline</th>
+        <th scope="col">Date Of Journey</th>
+        <th scope="col">Date Of Booking</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Ticket Status</th>
+        <!-- <th scope="col">Unblock</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of book">
+        <td>{{ booking.bookingPNR }}</td>
+        <td>{{ booking.bookingPassengerName }}</td>
+        <td>{{ booking.mobile }}</td>
+        <td>{{ booking.source }}</td>
+        <td>{{ booking.destination }}</td>
+        <td>{{ booking.airline }}</td>
+        <td>{{ booking.dateOfJourney }}</td>
+        <td>{{ booking.bookingDate }}</td>
+        <td>{{ booking.emailID }}</td>
+        <td>{{ booking.ticketStatus }}</td>
+      </tr>
+    </tbody>
+  </table> -->

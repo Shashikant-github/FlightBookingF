@@ -5,9 +5,8 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class RouteService {
-  
-
-  constructor(private route: Router) {}
+ 
+constructor(private route: Router) {}
   goToHome(){
     this.route.navigate(['home']);
   }
@@ -49,5 +48,8 @@ export class RouteService {
   }
   goToDashBoardAdmin() {
     this.route.navigate(['dashboardAdmin']);
+  }
+  goToAllBooking() {
+    this.route.navigate(['allBooking']);
   }
 }

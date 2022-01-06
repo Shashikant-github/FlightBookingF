@@ -1,6 +1,4 @@
-<p>book-flight works!</p>
-
-
+<p>Booking</p>
 <div class="bookingForm">
     <!-- bookingPNR?:string;
     bookingPassengerName?:string;
@@ -13,8 +11,9 @@
     ticketStatus?:string; -->
     
   <form #bookForm="ngForm" (ngSubmit)="bookingDetails(bookForm)">
-    <div class="form-group">
-      <label for="exampleInputPassenger">Passenger Name</label>
+    <div class="form-group row">
+      <label for="exampleInputPassenger" class="col-sm-2 col-form-label">Passenger Name</label>
+      <div class="col-sm-10">
       <input
         type="text"
         class="form-control"
@@ -23,10 +22,13 @@
         name="bookingPassengerName"
         [(ngModel)]="bookTicket.bookingPassengerName"
       />
+    </div>
       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
-    <div class="form-group">
-      <label for="exampleInputMobile">Mobile no.</label>
+    <br />
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-2 col-form-label">Mobile no.</label>
+      <div class="col-sm-10">
       <input
         type="string"
         name="mobile"
@@ -36,9 +38,11 @@
         [(ngModel)]="bookTicket.mobile"
       />
     </div>
-    <div class="form-group">
-      <label for="exampleInputSource">Source</label>
-
+    </div>
+    <br />
+    <div class="form-group row">
+      <label for="exampleInputSource" class="col-sm-2 col-form-label">Source</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="source"
@@ -48,8 +52,11 @@
         [(ngModel)]="bookTicket.source"
       />
     </div>
-    <div class="form-group">
-      <label for="exampleInputDestination">Destination</label>
+    </div>
+    <br />
+    <div class="form-group row">
+      <label for="exampleInputDestination" class="col-sm-2 col-form-label">Destination</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="destination"
@@ -59,8 +66,11 @@
         [(ngModel)]="bookTicket.destination"
       />
     </div>
-    <div class="form-group">
-      <label for="exampleInputAirline">Airline</label>
+    </div>
+    <br />
+    <div class="form-group row">
+      <label for="exampleInputAirline" class="col-sm-2 col-form-label">Airline</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="airline"
@@ -70,8 +80,11 @@
         [(ngModel)]="bookTicket.airline"
       />
     </div>
-    <div class="form-group">
-      <label for="exampleInputDateOfJourney">Date Of Journey</label>
+    </div>
+    <br />
+    <div class="form-group row">
+      <label for="exampleInputDateOfJourney" class="col-sm-2 col-form-label">Date Of Journey</label>
+      <div class="col-sm-10">
       <input
         type="datetime"
         name="dateOfJourney"
@@ -81,8 +94,11 @@
         [(ngModel)]="bookTicket.dateOfJourney"
       />
     </div>
-    <div class="form-group">
-        <label for="exampleInputEmailID">emailID</label>
+    </div>
+    <br />
+    <div class="form-group row">
+        <label for="exampleInputEmailID" class="col-sm-2 col-form-label">emailID</label>
+        <div class="col-sm-10">
         <input
           type="email"
           name="emailID"
@@ -92,6 +108,7 @@
           [(ngModel)]="bookTicket.emailID"
         />
       </div>
+    </div>
       <!-- <div class="form-group">
         <label for="exampleInputAddress">ticketStatus</label>
         <input
@@ -103,12 +120,12 @@
           [(ngModel)]="bookTicket.ticketStatus"
         />
       </div> -->
-    <div class="form-group">
       <br />
-      <button type="submit" class="btn btn-primary">Book</button>
-
+    <div class="button1">
+      <button type="submit" class="btn btn-primary" id='btn-register'>Book</button>
       <!-- <a routerLink="/bookFlight">Click here to Book Another Ticket</a> -->
     </div>
+    <br> 
   </form>
 </div>
 

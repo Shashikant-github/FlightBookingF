@@ -30,7 +30,7 @@ registerUserDetails(regForm:NgForm){
     this.toast.success("User Registered Successfully");
   })
   alert("Registered Successfully");
-regForm.resetForm();
-this.routerService.goToLogin();
+  regForm.resetForm();
+
 }
 }

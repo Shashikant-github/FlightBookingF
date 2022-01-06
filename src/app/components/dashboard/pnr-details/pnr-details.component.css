@@ -3,3 +3,14 @@
     justify-content: center;
     margin:3px;
 }
+p{
+    text-align: center;
+    color:red;
+}
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:space-around;
+   margin:10PX;
+   box-shadow: 5px 10px #888888;
+} 

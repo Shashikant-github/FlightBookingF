@@ -12,57 +12,53 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   //public isLoggedIn$: BehaviorSubject<boolean>;
   userInfo: UserInfo;
-  public token:any;
-  constructor(private userService: UserService,private toaster:ToastrService,private routeService:RouteService) {
+  public token: any;
+  Invalid?: string = '';
+  constructor(
+    private userService: UserService,
+    private toaster: ToastrService,
+    private routeService: RouteService
+  ) {
     this.userInfo = new UserInfo();
-   
   }
-
-  ngOnInit(): void {
-  }
-  loginUser(loginForm:NgForm) {
+  ngOnInit(): void {}
+  loginUser(loginForm: NgForm) {
     // console.log(loginForm.value);
     // this.userInfo=loginForm.value;
-    this.userInfo.UserIName=loginForm.value.userName;
-    this.userInfo.UserIPassword=loginForm.value.password;
+    this.userInfo.UserIName = loginForm.value.userName;
+    this.userInfo.UserIPassword = loginForm.value.password;
     //this.userInfo.UserIPassword = "11";
     console.log(this.userInfo.UserIName);
     console.log(this.userInfo.UserIPassword);
 
-    this.userService.loginUser(this.userInfo).subscribe(res=>{
+    this.userService.loginUser(this.userInfo).subscribe((res) => {
       console.log(`Token Generated:${res}`);
-      // let jsonObj=JSON.stringify(res);
-      // console.log(jsonObj);
-      this.token=res; 
-      console.log(` token ${this.token}`);
-    const res1=this.userService.authUser(this.token)
-    console.log(`Token=${res1}`);
-    if(localStorage.getItem('userRole')=="Admin"){
-      this.routeService.goToDashBoardAdmin();
-    }
-    else{
-      this.routeService.goToDashboard();
-    }
-    })
-    
-    
-    
-      //let jsonObj=JSON.stringify(res);
-    // console.log(jsonObj);
-    //const parsedJsonRes=JSON.parse(jsonObj);
-    //  console.log(`JSON Token: ${parsedJsonRes['token']}`);
-    //   localStorage.setItem('MyToken',parsedJsonRes['token']);
-    //   localStorage.setItem('userName',parsedJsonRes['username']);
-    //   localStorage.setItem('userRole',parsedJsonRes['userrole']);
-    //   this.tokenService.token=localStorage.getItem('MyToken');
 
+      if (res != null) {
+        this.token = res;
+        console.log(` token ${this.token}`);
+        const res1 = this.userService.authUser(this.token);
+        console.log(`Token=${res1}`);
+        if (localStorage.getItem('userRole') == 'Admin') {
+          this.routeService.goToDashBoardAdmin();
+          this.toaster.success('User Logged in Successfully!');
+        } else {
+          this.routeService.goToDashboard();
+          this.toaster.success('User Logged in Successfully!');
+        }
+      } else {
+        this.toaster.error('Invalid Credentials! Please Try again');
+        this.Invalid = 'Invalid Credentials! Please Try again';
+      } 
+    });
+    loginForm.resetForm();
   }
-  show(){
-    this.toaster.success("User Logged in Successfully!");
+  register(){
+    this.routeService.goToRegister();
   }
 }

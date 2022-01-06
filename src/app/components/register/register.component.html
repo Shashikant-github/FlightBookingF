@@ -1,21 +1,24 @@
-<p>User Registration Form</p>
+<p>Registration</p>
 <div class="registerForm">
   <form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
-    <div class="form-group">
-      <label for="exampleInputText">Username</label>
+    <div class="form-group row">
+      <label for="exampleInputText" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-10">
       <input
         type="text"
         class="form-control"
-        id="exampleInputText"
-        
+        id="exampleInputText"    
         placeholder="Please Enter Username"
         name="userName"
         [(ngModel)]="registeredUser.UserName"
       />
+    </div>
       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword">Password</label>
+    <br>
+    <div class="form-group row">
+      <label for="exampleInputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
       <input
         type="password"
         name="password"
@@ -23,11 +26,12 @@
         id="exampleInputPassword1"
         placeholder="Please Enter Password"
         [(ngModel)]="registeredUser.Password"
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputEmail">EmailID</label>
-
+    <br>
+    <div class="form-group row">
+      <label for="exampleInputEmail" class="col-sm-2 col-form-label">EmailID</label>
+      <div class="col-sm-10">
       <input
         type="email"
         name="email"
@@ -37,15 +41,18 @@
         [(ngModel)]="registeredUser.emailID"
       />
     </div>
-    <!-- <div class="form-group mb-3 row">
+  </div>
+  <br>
+    <!-- <div class="form-group row mb-3 row">
         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
         <div class="col-sm-10">
           <input type="password" class="form-control" id="inputPassword">
         </div>
       </div> -->
 
-    <div class="form-group">
-      <label for="exampleInputMobile">Mobile</label>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-2 col-form-label">Mobile</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="mobile"
@@ -53,10 +60,12 @@
         id="exampleInputMobile"
         placeholder="Please Enter Mobile No."
         [(ngModel)]="registeredUser.Mobile"
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputCity">City</label>
+    <br>
+    <div class="form-group row">
+      <label for="exampleInputCity" class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="city"
@@ -64,10 +73,12 @@
         id="exampleInputCity"
         placeholder="Please Enter City"
         [(ngModel)]="registeredUser.City"
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputAddress">Address</label>
+    <br>
+    <div class="form-group row">
+      <label for="exampleInputAddress" class="col-sm-2 col-form-label">Address</label>
+      <div class="col-sm-10">
       <input
         type="text"
         name="address"
@@ -75,14 +86,13 @@
         id="exampleInputAddress"
         placeholder="Please Enter Address"
         [(ngModel)]="registeredUser.Address"
-      />
+      /></div>
     </div>
-    <div class="form-group">
-      <br />
-      <button type="submit" class="btn btn-primary">Register</button>
-
-      <a routerLink="/login">Click here to Login</a>
-    </div>
+    <br>
+    <div class="button1">
+      <button type="submit" class="btn btn-primary" id='btn-register'>Register</button>
+    <a routerLink="/login" id='btn-register'>Click here to Login</a></div>
+    <br> 
   </form>
 </div>
 

@@ -1,14 +1,15 @@
 <!-- <p>header works!</p>-->
 <!-- <h1>Flight App</h1>  -->
 <div class="headerLink">
-    <h1>Flight Booking</h1>
-    <a routerLink="home">Home</a>
-    <a routerLink="register">Register</a>
-    <a (click)="login()" *ngIf='!(authService.isLoggedIn$|async)' (click)='authService.login()'>Login</a>
-    <a (click)="logout()" *ngIf='authService.isLoggedIn$|async' (click)='authService.logout()'>Logout</a>
+    <h1>Welcome to Flight Booking</h1>
+    <div class="header"><a routerLink="home">Home</a>
+        <a routerLink="register">Register</a>
+        <a routerLink="login" >Login</a></div>
     
+    <!-- <a (click)="logout()" *ngIf='authService.isLoggedIn$|async' >Logout</a> -->
+    <!-- <a routerLink="logout">Logout</a> -->
     <!-- <a routerLink="dashboard">Dashboard</a>
-    <a routerLink="logout">Logout</a>
+    
     <a routerLink="dashboardAdmin">Dashboard Admin</a> -->
     <!-- <a routerLink="displayFlights">Show Flights</a>
     <a routerLink="addFlight">Add Flight</a>

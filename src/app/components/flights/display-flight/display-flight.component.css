@@ -1,7 +1,11 @@
 p{text-align: center;
     color: crimson;
 }
-
+#card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 /* .card-flight{
     border:grey solid 2px;
     color:lemonchiffon;
@@ -13,9 +17,8 @@ p{text-align: center;
     border-radius: 10px;
     box-shadow: 5px 10px rgb(199, 189, 189);
 } */
-/* .cards-layout{
-    display:inline-flex;
-    flex-direction: row;
-    margin-left: 250px;  
-    color:brown;
-} */
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:space-around;
+} 

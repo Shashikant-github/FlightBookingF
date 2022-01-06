@@ -1,16 +1,11 @@
-h1{
-    text-align: center;
-    background-color: aqua;
-    position: fixed;
-}
+
 .footerLink{  
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-around; 
-   border:black 2px solid; 
-    
-    margin-bottom: auto;
-    border-radius: 5px;
-    background-color: aqua;
+    position:relative;
+    width:100%;
+    height:40px;   
+    background-color:khaki;
+    border: black 2px solid; 
+   
+  text-align: center;
+
 }

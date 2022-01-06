@@ -39,11 +39,14 @@ import { DeleteAirlineComponent } from './components/dashboard-admin/delete-airl
 import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk.component';
 import { HomeComponent } from './components/home/home.component';
 
-import { ErrorInterceptorService } from './services/error-interceptor.service';
+
 import { DisplayFlightsAComponent } from './components/dashboard-admin/display-flights-a/display-flights-a.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { JWTHttpInterceptor } from './services/jwthttp.interceptor';
+import { AllBookingComponent } from './components/dashboard-admin/all-booking/all-booking.component';
+import { ErrorInterceptor } from './services/error.interceptor';
+import { AdminNavComponent } from './components/dashboard-admin/admin-nav/admin-nav.component';
 
 
 @NgModule({
@@ -69,7 +72,9 @@ import { JWTHttpInterceptor } from './services/jwthttp.interceptor';
     DeleteAirlineComponent,
     AddBulkComponent,
     HomeComponent,
-    DisplayFlightsAComponent
+    DisplayFlightsAComponent,
+    AllBookingComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +93,7 @@ import { JWTHttpInterceptor } from './services/jwthttp.interceptor';
    MatInputModule,
    FormsModule,
    ToastrModule.forRoot({
-    timeOut: 10000,
+    timeOut: 5000,
     positionClass: 'toast-top-right',
     preventDuplicates: true,
   }),
@@ -97,7 +102,7 @@ import { JWTHttpInterceptor } from './services/jwthttp.interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JWTHttpInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

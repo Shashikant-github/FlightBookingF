@@ -3,9 +3,10 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -13,6 +14,29 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+
+    console.log("Error interception in Progress");
+    // const token:string|null = localStorage.getItem('MyToken');
+    // request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
+    // request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') });
+    // request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
+  
+    return next.handle(request).pipe(
+      catchError((error:HttpErrorResponse)=>{
+        let errorMsg="";
+        if(error.error instanceof ErrorEvent){
+          console.log("This is client side error");
+          errorMsg=`Error: ${error.error.message}`;
+        }
+        else{
+          console.log("This is server side Error");
+          errorMsg=`Error Status:${error.status} and Error Message:${error.message}`
+
+        }
+        console.log(errorMsg);
+        return throwError(() => new Error(errorMsg));
+        //return throwError(errorMsg);
+      })
+    );
   }
 }

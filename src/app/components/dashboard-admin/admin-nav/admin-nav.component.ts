@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightService } from 'src/app/services/flight.service';
 import { RouteService } from 'src/app/services/route.service';
 
 @Component({
-  selector: 'app-dashboard-admin',
-  templateUrl: './dashboard-admin.component.html',
-  styleUrls: ['./dashboard-admin.component.css']
+  selector: 'app-admin-nav',
+  templateUrl: './admin-nav.component.html',
+  styleUrls: ['./admin-nav.component.css']
 })
-export class DashboardAdminComponent implements OnInit {
+export class AdminNavComponent implements OnInit {
 
   constructor(private routeService:RouteService) { }
 
@@ -28,4 +27,5 @@ export class DashboardAdminComponent implements OnInit {
   allBooking(){
     this.routeService.goToAllBooking();
   }
+
 }

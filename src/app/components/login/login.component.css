@@ -1,9 +1,35 @@
 
-.loginForm{
-    display:flex;
-    justify-content: center;
+.welcome{
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  color:indianred;
 }
-#btn-register{
-    align-items: center;
-    margin-left: 300px;
+.loginform{
+    min-width: 400px;
+    min-height:100px;
+    margin-left: 30%;
+    margin-top: 5%;
+    position: absolute;
+    border-radius: 4px ;
+    box-shadow: 10px 10px 5px grey;
+    display:inline-flexbox;  
+}   
+
+.errorInvalid{
+    color:red;
+    text-align: center;
+    text-transform: uppercase;
 }
+button:hover {
+    background-color:lightcoral;
+        opacity: 0.8;
+  }
+  a:hover{
+    background-color:lightcoral;
+        opacity: 0.8;
+  }
+  .button1{
+    display: flex;
+    justify-content: space-around;
+  }
