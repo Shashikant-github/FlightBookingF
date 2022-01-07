@@ -4,6 +4,8 @@
   justify-content: center;
   text-transform: uppercase;
   color:indianred;
+  font-weight: bold;
+  font-size: x-large;
 }
 .loginform{
     min-width: 400px;
@@ -33,3 +35,9 @@ button:hover {
     display: flex;
     justify-content: space-around;
   }
+
+  /* .has-error input[type='email'],
+.has-error input[type='password'] {
+    border-color: rgb(216, 12, 12);
+    color: rgb(230, 14, 14);
+} */

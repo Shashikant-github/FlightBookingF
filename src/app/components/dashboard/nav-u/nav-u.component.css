@@ -1,4 +1,5 @@
-#navAdm{
+
+#navUser{
     font-size: large;
     font-weight: bold;
     color: rgb(228, 24, 24);
@@ -10,4 +11,3 @@ a:hover{
     background-color:lightcoral;
         opacity: 0.8;
   }
-

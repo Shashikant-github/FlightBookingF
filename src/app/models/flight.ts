@@ -6,6 +6,7 @@ export class Flight {
         // name?: string;
         // price?: number; 
         airlineName:string="";
+        airlineCode:string="";
         category?:string;
         ticketPrice?:string;
         status?:string;

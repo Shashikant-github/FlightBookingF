@@ -10,6 +10,7 @@ import { BookingService } from 'src/app/services/booking.service';
 export class CancelComponent implements OnInit {
 
   cancelPNR: string = '';
+  isShown: boolean = false ;
   book:Booking;
   constructor(private bookService:BookingService) { 
     this.book = new Booking();
@@ -17,23 +18,29 @@ export class CancelComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  cancelByPNR() {
-    
-    // this.PNR=this.booking.bookingPNR.toString();
-    console.log(this.cancelPNR);
-    this.bookService.cancelByPNR(this.cancelPNR).subscribe((res) => {
+  cancelByPNR(){
+    if(confirm("Are you sure want to cancel the Ticket?")){
+      console.log(this.cancelPNR);
+      this.bookService.cancelByPNR(this.cancelPNR).subscribe((res) => {
       console.log(res);
-      console.log(res.bookingDate);
-      this.book.bookingDate=res.bookingDate;
+     // this.book.bookingDate=res.bookingDate;
       if (res != null) {
        // bookPNR=new Booking();
         this.book=res;
         //this.routeService.goToPNR();
+        this.isShown = true;
       } else {
-        alert(`${this.cancelPNR} Not Found.`);
+        this.isShown = false;
+        alert(`PNR=${this.cancelPNR} Not Found.`);
       }
     });
-  }
+    }
+    // else{
 
+    // }
+    // this.PNR=this.booking.bookingPNR.toString();
+    
+   
+  }
 
 }

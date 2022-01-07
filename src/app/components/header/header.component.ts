@@ -9,14 +9,21 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent implements OnInit {
 isLogged?:boolean;
+isShown: boolean = true ; 
   constructor(public authService:UserService, private route:RouteService) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('UserName')!=null){
-     this.isLogged=true;
+    
+  }
+  toggleShow() {
+
+    if(localStorage.getItem('userName')!=null){
+      console.log(localStorage.getItem('userName'));
+      this.isShown=false;
     }
     else{
-      this.isLogged=false;
+      this.isShown=true;
     }
-  }
+    
+    }
 }

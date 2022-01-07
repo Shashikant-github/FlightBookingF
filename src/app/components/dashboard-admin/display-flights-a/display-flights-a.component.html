@@ -4,12 +4,13 @@
   <div class="card" style="width: 18rem;"  *ngFor="let flight of flights">
     <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking">
     <div class="card-body">
-      <h5 class="card-title">AirlineName: {{flight.airlineName}}</h5>
+      <h5 class="card-title">Airline Name: {{flight.airlineName}}</h5>
+      <h5 class="card-title">Airline Code: {{flight.airlineCode}}</h5>
       <h5 class="card-title">Category: {{flight.category}}</h5>
       <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
       <h5 class="card-title">Status: {{flight.status}}</h5>
       <h5 class="card-title">Deleted: {{flight.delete}}</h5>
-      <h5 class="card-title">Block/Unblock: <button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineName)" >{{flight.status}}</button></h5>
+      <h5 class="card-title">Block/Unblock: <button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineCode)" >{{flight.status}}</button></h5>
       <!-- <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
       <button type="submit" class="btn btn-primary" routerLink="/bookFlight">Book Ticket</button> -->
     </div>

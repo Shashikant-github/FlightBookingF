@@ -12,6 +12,7 @@ export class PnrDetailsComponent implements OnInit {
 
   bookingPNR: string = '';
  book:Booking;
+ isShown: boolean = false ;
   constructor(
     private bookService: BookingService,
     private routeService: RouteService
@@ -26,19 +27,24 @@ export class PnrDetailsComponent implements OnInit {
     // this.PNR=this.booking.bookingPNR.toString();
     console.log(this.bookingPNR);
     this.bookService.searchByPNR(this.bookingPNR).subscribe((res) => {
+      console.log(this.bookingPNR);
       console.log(res);
-      console.log(res.bookingDate);
-      this.book.bookingDate=res.bookingDate;
+      // console.log(res.bookingDate);
+      // this.book.bookingDate=res.bookingDate;
       if (res != null) {
        // bookPNR=new Booking();
         this.book=res;
+        this.isShown = true;
         //this.routeService.goToPNR();
       } else {
-        alert(`${this.bookingPNR} Not Found.`);
+        this.isShown = false;
+        //this.book=res;
+        alert(`PNR=${this.bookingPNR} Not Found.`);
       }
+      
     });
   }
-
+  
 }
 
 

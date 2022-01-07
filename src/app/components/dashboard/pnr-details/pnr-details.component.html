@@ -1,8 +1,8 @@
-
+<app-nav-u></app-nav-u>
 <h1>
   <form class="pnrForm">
     <div class="form-group">
-      <label for="exampleInputPNR">Get Booking Details by PNR</label>
+      <label for="exampleInputPNR">Booking Details by PNR</label>
       <input
         type="text"
         class="form-control"
@@ -14,14 +14,14 @@
     </div>
     <div>
       <br />
-      <button type="button" class="btn btn-primary" (click)="searchByPNR()">
+      <button type="button" class="btn btn-primary" (click)="searchByPNR()" >
         Search
       </button>
     </div>
   </form>
 </h1>
 <div class="cards-layout">
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;" *ngIf="isShown">
     <img class="card-img-top" src="https://www.pnrstatus.io/wp-content/uploads/2020/03/cropped-screenshot-2.png" alt="BookingAdmin">
     <div class="card-body">
       <h5 class="card-title">PNR: {{ book.bookingPNR }}</h5>

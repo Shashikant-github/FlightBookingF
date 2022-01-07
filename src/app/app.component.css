@@ -2,8 +2,10 @@
     min-height: 100vh;
     display: flex;
   flex-direction: column;
-  
  }
- footer{
-    margin-top: auto;
+ h1{
+   color: rgb(38, 228, 196);
+   text-transform: uppercase;
+   font-weight: bolder;
+   font-size: x-large;
  }

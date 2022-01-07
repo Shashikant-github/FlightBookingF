@@ -47,6 +47,7 @@ import { JWTHttpInterceptor } from './services/jwthttp.interceptor';
 import { AllBookingComponent } from './components/dashboard-admin/all-booking/all-booking.component';
 import { ErrorInterceptor } from './services/error.interceptor';
 import { AdminNavComponent } from './components/dashboard-admin/admin-nav/admin-nav.component';
+import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { AdminNavComponent } from './components/dashboard-admin/admin-nav/admin-
     HomeComponent,
     DisplayFlightsAComponent,
     AllBookingComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    NavUComponent
   ],
   imports: [
     BrowserModule,

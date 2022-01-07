@@ -1,4 +1,4 @@
-<p>cancel works!</p>
+<app-nav-u></app-nav-u>
 <h1>
     <form class="cancelForm">
       <div class="form-group">
@@ -15,12 +15,29 @@
       <div>
         <br />
         <button type="button" class="btn btn-primary" (click)="cancelByPNR()">
-          Cancel
+          Submit 
         </button>
       </div>
     </form>
   </h1>
-  <div>
+  <div class="cards-layout" >
+    <div class="card" style="width: 20rem;" *ngIf="isShown">
+      <img class="card-img-top" src="https://www.airport-technology.com/wp-content/uploads/sites/14/2021/03/pexels-jeshootscom-1201995-e1615985382761.jpg" alt="BookingHistory">
+      <div class="card-body" >
+        <h5 class="card-title">PNR: {{ book.bookingPNR }}</h5>
+        <h5 class="card-title">PassengerName: {{ book.bookingPassengerName}}</h5>
+        <h5 class="card-title">Mobile No.: {{ book.mobile }}</h5>
+        <h5 class="card-title">Airline: {{ book.airline }}</h5>
+        <h5 class="card-title">Source: {{ book.source }}</h5>
+        <h5 class="card-title">Destination: {{ book.destination }}</h5>
+        <h5 class="card-title">Date Of Journey: {{ book.dateOfJourney }}</h5>
+        <h5 class="card-title">Date Of Booking: {{ book.bookingDate }}</h5>
+        <h5 class="card-title">Email ID: {{ book.emailID }}</h5>
+        <h5 class="card-title">Ticket Status: {{ book.ticketStatus }}</h5>
+      </div>
+    </div>
+    </div>
+  <!-- <div>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -51,4 +68,4 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->

@@ -17,12 +17,12 @@
     margin:auto;
     text-transform: uppercase;
 }
-.header{
+/* .header{
     width:200px;
     text-transform: uppercase;
     display: flex;
-    justify-content:space-between;
-}
+    justify-content:space-around;
+} */
 h1{
     color:brown;
     text-transform: uppercase;
@@ -42,4 +42,5 @@ a:hover{
 } */
 a{
     color: mediumblue;
+    font-size: medium;
 }

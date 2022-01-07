@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject } from 'rxjs';
-
 import { UserInfo } from 'src/app/models/user-info';
 
 import { RouteService } from 'src/app/services/route.service';
@@ -18,20 +16,46 @@ export class LoginComponent implements OnInit {
   //public isLoggedIn$: BehaviorSubject<boolean>;
   userInfo: UserInfo;
   public token: any;
+
   Invalid?: string = '';
   constructor(
     private userService: UserService,
     private toaster: ToastrService,
-    private routeService: RouteService
+    private routeService: RouteService,
+    
   ) {
     this.userInfo = new UserInfo();
+
+  
+    //   this.loginFormV  =  this.formBuilder.group({
+    //     email: ['', Validators.required],
+    //     password: ['', Validators.required]
+    // });
+    
   }
-  ngOnInit(): void {}
-  loginUser(loginForm: NgForm) {
+  ngOnInit(): void {
+  
+    //this.formGroup.reset({title: 'new value'});
+    // this.loginFormV.reset({email:'new value', password:'new value'});
+   
+      
+  }
+  // get formControls() {
+  //   return this.loginFormV.controls;
+  //   }
+
+  loginUser(loginForm:NgForm) {
+
+    // console.log(this.loginFormV.value);
+    // this.isSubmitted = true;
+    // if(this.loginFormV.invalid){
+    //   return;
+    // }
     // console.log(loginForm.value);
     // this.userInfo=loginForm.value;
     this.userInfo.UserIName = loginForm.value.userName;
     this.userInfo.UserIPassword = loginForm.value.password;
+   
     //this.userInfo.UserIPassword = "11";
     console.log(this.userInfo.UserIName);
     console.log(this.userInfo.UserIPassword);

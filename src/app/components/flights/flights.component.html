@@ -1,2 +1,11 @@
- <app-profile></app-profile>
-<app-display-flight></app-display-flight>
+<div class="cards-layout">
+    <div class="card" style="width: 18rem;"  *ngFor="let flight of flights">
+      <img class="card-img-top" src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/8/31/w900X450/AIRPORT1__.jpg?w=400&dpr=2.6" alt="FlightBookingUser">
+      <div class="card-body">
+        <h5 class="card-title">AirlineName: {{flight.airlineName}}</h5>
+        <h5 class="card-title">Category: {{flight.category}}</h5>
+        <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
+        <button type="submit" class="btn btn-primary" (click)="loginBook()">Book Ticket</button>
+      </div>
+    </div>
+    </div>

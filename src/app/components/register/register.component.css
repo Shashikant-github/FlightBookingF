@@ -1,6 +1,8 @@
 p{text-align: center;
-    color:brown;
+    color:indianred;
     text-transform: uppercase;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .registerForm{
