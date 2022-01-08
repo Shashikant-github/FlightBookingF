@@ -1,11 +1,7 @@
 p{text-align: center;
     color: crimson;
 }
-#card{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+
 /* .card-flight{
     border:grey solid 2px;
     color:lemonchiffon;

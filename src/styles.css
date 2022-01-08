@@ -2,16 +2,20 @@
 
 html, body { margin:0;
   padding:0;
+  height: 100%;
+  width: 100%;
   }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-background-image: url("https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg");
-height: 100%;
+/* background-image: url();
 
-  /* Center and scale the image nicely */
+
+  /* Center and scale the image nicely 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
+
+/* https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg */
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
 
@@ -57,7 +61,7 @@ height: 100%;
     bottom: 12px;
     left: 12px;
   }
-  
+
   /* toast styles */
   .toast-title {
     font-weight: bold;
@@ -205,4 +209,4 @@ height: 100%;
       width: 25em;
     }
   }
-  
+

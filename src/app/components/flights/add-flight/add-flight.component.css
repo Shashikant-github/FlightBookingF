@@ -1,11 +1,6 @@
 .panel{
-    display:block;
-    background-color: cornsilk;
-    align-items: center;
-    margin-left: 500px;
-    justify-content: space-around;
-   max-width: 500px;
-   margin-top: 50px;
+    display:flex;
+    justify-content: center;
 }
 .title{
     color:black;

@@ -1,9 +1,9 @@
-<p>Registration</p>
+<br><p>Registration</p>
 <div class="registerForm">
   <form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
-    <div class="form-group row">
+    <div class="form-group1">
       <label for="exampleInputText" class="col-sm-2 col-form-label">Username</label>
-      <div class="col-sm-10">
+     
       <input
         type="text"
         class="form-control"
@@ -12,11 +12,11 @@
         name="userName"
         [(ngModel)]="registeredUser.UserName"
       />
-    </div>
+  
       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <br>
-    <div class="form-group row">
+    <div class="form-group1 row">
       <label for="exampleInputPassword" class="col-sm-2 col-form-label">Password</label>
       <div class="col-sm-10">
       <input
@@ -29,7 +29,7 @@
       /></div>
     </div>
     <br>
-    <div class="form-group row">
+    <div class="form-group1 row">
       <label for="exampleInputEmail" class="col-sm-2 col-form-label">EmailID</label>
       <div class="col-sm-10">
       <input
@@ -50,7 +50,7 @@
         </div>
       </div> -->
 
-    <div class="form-group row">
+    <div class="form-group1 row">
       <label for="exampleInputMobile" class="col-sm-2 col-form-label">Mobile</label>
       <div class="col-sm-10">
       <input
@@ -63,7 +63,7 @@
       /></div>
     </div>
     <br>
-    <div class="form-group row">
+    <div class="form-group1 row">
       <label for="exampleInputCity" class="col-sm-2 col-form-label">City</label>
       <div class="col-sm-10">
       <input
@@ -76,7 +76,7 @@
       /></div>
     </div>
     <br>
-    <div class="form-group row">
+    <div class="form-group1 row">
       <label for="exampleInputAddress" class="col-sm-2 col-form-label">Address</label>
       <div class="col-sm-10">
       <input
@@ -95,7 +95,9 @@
     <br> 
   </form>
 </div>
-
+<Br>
+  
+            
 <!--UserName?:string;
 City?:string;
 Password?:string;

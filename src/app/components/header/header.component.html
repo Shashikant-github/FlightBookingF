@@ -1,10 +1,10 @@
 <!-- <p>header works!</p>-->
 <!-- <h1>Flight App</h1>  -->
-<div class="headerLink">
+<header class="headerLink">
     <h1>Welcome to Flight Booking</h1>
-    <!-- <a routerLink="home" *ngIf="isShown" >Home</a>
+    <a routerLink="home"  (click)="toggleShow()">Home</a>
         <a routerLink="register" *ngIf="isShown" (click)="toggleShow()" >New User? Register here</a>
-        <a routerLink="login" *ngIf="isShown" (click)="toggleShow()">Login</a>--></div>
+        <a routerLink="login" *ngIf="isShown" (click)="toggleShow()">Login</a></header>
     
     <!-- <a (click)="logout()" *ngIf='authService.isLoggedIn$|async' >Logout</a> -->
     <!-- <a routerLink="logout">Logout</a> -->

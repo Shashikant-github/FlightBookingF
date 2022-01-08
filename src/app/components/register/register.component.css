@@ -1,19 +1,31 @@
 p{text-align: center;
     color:indianred;
     text-transform: uppercase;
-    font-size: x-large;
+    font-size: medium;
     font-weight: bold;
 }
-
 .registerForm{
-    min-width: 400px;
-    margin-left: 30%;
-    position: absolute;
+    min-width: 500px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;  
+    
+    /* position: absolute;
     border-radius: 4px ;
-    box-shadow: 10px 10px 5px grey;
-    display:inline-flexbox;  
+    /* box-shadow: 10px 10px 5px grey; 
+    display:inline-flexbox;   */
+    display:flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  min-width: auto;
 }
 .button1{
+    display: flex;
+    justify-content: space-around;
+  }
+  .form-group1{
     display: flex;
     justify-content: space-around;
   }

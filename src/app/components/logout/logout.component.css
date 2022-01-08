@@ -1,6 +1,19 @@
-p{text-align: center;}
-div{
-    display: flex;
-    
-    justify-content: space-around;
-}
+a:hover{
+        background-color:lightcoral;
+            opacity: 0.8;
+      }
+.logoutForm{
+        display: flex;
+        flex-wrap: wrap;
+        text-transform: uppercase;
+        justify-content: center;
+        font-weight: bold;
+        font-size:medium;
+        width: 400px;
+        min-height:100px;
+        margin-left: 30%;
+        margin-top: 5%;
+        border-radius: 4px ;
+        box-shadow: 10px 10px 5px grey;
+        
+    }   

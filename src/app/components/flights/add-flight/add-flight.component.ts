@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Flight } from 'src/app/models/flight';
 import { FlightService } from 'src/app/services/flight.service';
+import { RouteService } from 'src/app/services/route.service';
+import { DisplayFlightComponent } from '../display-flight/display-flight.component';
 
 @Component({
   selector: 'app-add-flight',
@@ -12,9 +14,10 @@ export class AddFlightComponent implements OnInit {
 
   flightObj:Flight;
   flights?:Array<Flight>;
-
-  constructor(private flightService:FlightService, private toaster:ToastrService) {
+displayFlight?:DisplayFlightComponent;
+  constructor(private flightService:FlightService, private toaster:ToastrService,private routeSer:RouteService) {
     this.flightObj=new Flight();
+    
    }
 
   ngOnInit(): void {
@@ -23,6 +26,7 @@ export class AddFlightComponent implements OnInit {
     //    this.flights=res;
     //  console.log(res);
     //  })
+    this.displayFlight?.ngOnInit();
   }
   addFlight(){
     console.log(`Added Flight Name : ${this.flightObj.airlineName}`);
@@ -34,9 +38,10 @@ export class AddFlightComponent implements OnInit {
      //this.flights?.push(this.flightObj);
      // console.log("Flight Added");
       this.toaster.success("Flight Added");
+      alert("Flight Added")
+      // this.routeSer.goToAddA();
+      this.routeSer.goToDashBoardAdmin();
     });
     
-    
-
 }
 }

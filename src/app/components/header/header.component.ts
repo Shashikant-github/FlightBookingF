@@ -17,13 +17,22 @@ isShown: boolean = true ;
   }
   toggleShow() {
 
-    if(localStorage.getItem('userName')!=null){
-      console.log(localStorage.getItem('userName'));
-      this.isShown=false;
-    }
-    else{
-      this.isShown=true;
-    }
+    // if(localStorage.getItem('userName')!=null){
+    //   console.log(localStorage.getItem('userName'));
+    //   this.isShown=false;
+    // }
+    // else{
+    //   this.isShown=true;
+    // }
+    this.isShown=!this.isShown;
     
+    }
+    BackToHome(){
+      if(confirm("Going Home will logout you! Please confirm.")){
+        this.isShown=true;
+      localStorage.clear();
+      }
+    
+      
     }
 }

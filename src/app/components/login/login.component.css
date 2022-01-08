@@ -1,43 +1,35 @@
-
 .welcome{
-  display: flex;
-  justify-content: center;
   text-transform: uppercase;
   color:indianred;
   font-weight: bold;
   font-size: x-large;
 }
 .loginform{
-    min-width: 400px;
-    min-height:100px;
-    margin-left: 30%;
-    margin-top: 5%;
-    position: absolute;
-    border-radius: 4px ;
-    box-shadow: 10px 10px 5px grey;
-    display:inline-flexbox;  
-}   
-
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.shadow1{
+  border-radius: 5px;
+  margin-top:0%;
+  box-shadow: 10px 10px 5px 2px gray;
+}
 .errorInvalid{
     color:red;
     text-align: center;
     text-transform: uppercase;
 }
-button:hover {
+.container1{
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
+}
+a:hover{
     background-color:lightcoral;
         opacity: 0.8;
   }
-  a:hover{
-    background-color:lightcoral;
-        opacity: 0.8;
+  p{
+    font-weight: bolder;
+    font-size: large;
   }
-  .button1{
-    display: flex;
-    justify-content: space-around;
-  }
-
-  /* .has-error input[type='email'],
-.has-error input[type='password'] {
-    border-color: rgb(216, 12, 12);
-    color: rgb(230, 14, 14);
-} */

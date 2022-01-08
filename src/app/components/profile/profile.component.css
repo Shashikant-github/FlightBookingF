@@ -1,8 +1,9 @@
 .userProfile{
-   background-color: coral;   
+  color: indianred;
+  font-size: large;
+  font-weight: bold;  
 }
 div{
     display: flex;
-    justify-content: flex-end; 
-    margin: 5px; 
+    justify-content:flex-start;
 }

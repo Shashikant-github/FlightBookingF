@@ -1,6 +1,6 @@
 <app-admin-nav></app-admin-nav>
-<div>
-    <mat-expansion-panel class="panel" class="disable_ripple">
+<div class="panel">
+    <mat-expansion-panel  class="disable_ripple">
         <mat-expansion-panel-header>
             <mat-panel-title class="title">
                 Add Flight Details
@@ -19,10 +19,10 @@
             <input matInput [(ngModel)]="flightObj.ticketPrice">
         </mat-form-field>
         
-        <button (click)="addFlight()">Add</button>
+        <button mat-raised-button color="warn" (click)="addFlight()">Add</button>
     </mat-expansion-panel>
 </div>
-
+<app-display-flights-a></app-display-flights-a>
 <!-- public int AirlineId { get; set; }
         public string AirlineName { get; set; }
         public string Category { get; set; }

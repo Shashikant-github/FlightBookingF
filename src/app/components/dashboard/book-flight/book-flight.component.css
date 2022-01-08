@@ -14,7 +14,7 @@ p{text-align: center;
     margin-left: 30%;
     position: absolute;
     border-radius: 4px ;
-    box-shadow: 10px 10px 5px grey;
+    /* box-shadow: 10px 10px 5px grey; */
     display:inline-flexbox;  
 }
 .button1{

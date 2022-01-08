@@ -27,7 +27,7 @@ const routes:Routes=[
   {path:'register',component:RegisterComponent},
  
 
-  {path:"logout",component:LogoutComponent,canActivate:[AuthGuard]},
+  {path:"logout",component:LogoutComponent},
  
   {path:"bookFlight",component:BookFlightComponent},
   {path:"displayFlights",component:DisplayFlightComponent},
@@ -35,17 +35,19 @@ const routes:Routes=[
   
 //User DashBoard
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
-  {path:"dashboard/pnrDetails",component:PnrDetailsComponent},
-  {path:"dashboard/history", component:HistoryComponent},
-  {path:"dashboard/cancel",component:CancelComponent},
+  {path:"dashboard/pnrDetails",component:PnrDetailsComponent,canActivate:[AuthGuard]},
+  {path:"dashboard/history", component:HistoryComponent,canActivate:[AuthGuard]},
+  {path:"dashboard/cancel",component:CancelComponent,canActivate:[AuthGuard]},
 
 //Admin DashBoard
-  {path:"dashboardAdmin",component:DashboardAdminComponent},
-  {path:'dashboardAdmin/update',component:UpdateAirlineComponent},
-  {path:'dashboardAdmin/delete',component:DeleteAirlineComponent},
-  {path:"addFlight",component:AddFlightComponent},
-  {path:"dashboardAdmin/AddBulk",component:AddBulkComponent},
-  {path:"allBooking", component:AllBookingComponent}
+  {path:"dashboardAdmin",component:DashboardAdminComponent,canActivate:[AuthGuard]},
+  {path:'dashboardAdmin/update',component:UpdateAirlineComponent,canActivate:[AuthGuard]},
+  {path:'dashboardAdmin/delete',component:DeleteAirlineComponent,canActivate:[AuthGuard]},
+  {path:"addFlight",component:AddFlightComponent,canActivate:[AuthGuard]},
+  {path:"dashboardAdmin/AddBulk",component:AddBulkComponent,canActivate:[AuthGuard]},
+  {path:"allBooking", component:AllBookingComponent,canActivate:[AuthGuard]},
+  { path: 'admin', loadChildren: () => import('../../admin/admin.module').then(m => m.AdminModule) },
+  { path: 'user', loadChildren: () => import('../../user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({

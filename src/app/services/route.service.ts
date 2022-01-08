@@ -49,6 +49,13 @@ constructor(private route: Router) {}
   goToDashBoardAdmin() {
     this.route.navigate(['dashboardAdmin']);
   }
+  goToAdmin() {
+    this.route.navigate(['admin']);
+  }
+  goToUser() {
+    this.route.navigate(['user']);
+  }
+  
   goToAllBooking() {
     this.route.navigate(['allBooking']);
   }
