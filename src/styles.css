@@ -6,13 +6,12 @@ html, body { margin:0;
   width: 100%;
   }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-/* background-image: url();
+ background-image: url('https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg');
 
-
-  /* Center and scale the image nicely 
+  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover; 
 }
 
 /* https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg */

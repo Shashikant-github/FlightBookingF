@@ -10,7 +10,7 @@
       <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
       <h5 class="card-title">Status: {{flight.status}}</h5>
       <h5 class="card-title">Deleted: {{flight.delete}}</h5>
-      <h5 class="card-title">Block/Unblock: <button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineCode)" >{{flight.status}}</button></h5>
+      <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button>
       <!-- <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
       <button type="submit" class="btn btn-primary" routerLink="/bookFlight">Book Ticket</button> -->
     </div>

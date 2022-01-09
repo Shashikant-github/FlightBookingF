@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  user_api_url:'https://shashi-users.azurewebsites.net/v1.0/api/FlightApp/User/',
+  airline_api_url:'https://shashi-airline.azurewebsites.net/v1.0/api/FlightApp/Airline/',
+  booking_api_url:'https://shashi-booking.azurewebsites.net/v1.0/api/FlightApp/Booking/'
 };
 
 /*

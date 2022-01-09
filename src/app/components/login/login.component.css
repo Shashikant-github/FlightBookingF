@@ -1,9 +1,9 @@
-.welcome{
+/* .welcome{
   text-transform: uppercase;
   color:indianred;
   font-weight: bold;
-  font-size: x-large;
-}
+  font-size: larger;
+} */
 .loginform{
   display:flex;
   justify-content: space-around;
@@ -30,6 +30,8 @@ a:hover{
         opacity: 0.8;
   }
   p{
+    color:rgb(6, 99, 238);
     font-weight: bolder;
     font-size: large;
+    text-transform: uppercase;
   }

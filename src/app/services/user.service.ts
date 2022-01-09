@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { UserInfo } from '../models/user-info';
 
@@ -9,7 +10,7 @@ import { UserInfo } from '../models/user-info';
 })
 export class UserService {
   // logic
-
+  user_url=environment.user_api_url;
   public isLoggedIn$: BehaviorSubject<boolean>;
 
   constructor(private httpClient: HttpClient) {
@@ -18,11 +19,11 @@ export class UserService {
    }
 
   registerUser(regUser: User): Observable<boolean> {
-    return this.httpClient.post<boolean>('https://localhost:5013/v1.0/api/FlightApp/User/registerUser', regUser);
+    // return this.httpClient.post<boolean>('https://localhost:5013/v1.0/api/FlightApp/User/registerUser', regUser);
+    return this.httpClient.post<boolean>(this.user_url+'registerUser', regUser);
   }
   loginUser(loginInfo: UserInfo):Observable<string> {
-   
-    return this.httpClient.post<string>('https://localhost:5013/v1.0/api/FlightApp/User/Login',loginInfo);
+   return this.httpClient.post<string>(this.user_url+'Login',loginInfo);
   }
   authUser(token: any) {
     let jsonObj=JSON.stringify(token);

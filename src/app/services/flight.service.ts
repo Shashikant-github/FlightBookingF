@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Flight } from '../models/flight';
 
 @Injectable({
@@ -8,33 +9,27 @@ import { Flight } from '../models/flight';
 })
 export class FlightService {
  
-  //  flight_URL?:string="http://localhost:3000/flights";
+  airline_url=environment.airline_api_url;
   constructor(private httpClient:HttpClient) {
   //  this.flight_URL=
    }
   
   getAllFlights():Observable<Flight[]>{
-    return this.httpClient.get<Flight[]>(`https://localhost:5011/v1.0/api/FlightApp/Airline/GetAllAirlines`);
+    //return this.httpClient.get<Flight[]>(`https://localhost:5011/v1.0/api/FlightApp/Airline/GetAllAirlines`);
+    return this.httpClient.get<Flight[]>(this.airline_url+`GetAllAirlines`);
   }
   addFlight(flightObj:Flight):Observable<boolean> {
-    return this.httpClient.post<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/AddAirline`,flightObj);
+    return this.httpClient.post<boolean>(this.airline_url+'AddAirline',flightObj);
   }
   deleteAirline(airlineName: string):Observable<boolean> {
-    return this.httpClient.delete<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/DeleteAirline/`+airlineName);
-
+    return this.httpClient.delete<boolean>(this.airline_url+'DeleteAirline/'+airlineName);
   }
-  // updateAirline(airlineName: string, airline: Flight):Observable<boolean> {
-  //   return true;
-  //   return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/UpdateAirlineStatus/Go`+airlineName+``+airline);
-  // }
-  blockAirline(airlineNam: string, flightObj:Flight):Observable<boolean>{
-    console.log(`${airlineNam} form service`)
-    return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/BlockAirline/`+airlineNam, flightObj);
-    //return this.httpClient.put<boolean>(`https://localhost:5011/v1.0/api/FlightApp/Airline/BlockAirline/`+airlineNam);
+
+  blockAirline(airlineNam: string, flightObj:Flight):Observable<boolean>{ 
+    return this.httpClient.put<boolean>(this.airline_url+`BlockAirline/`+airlineNam, flightObj);
   }
   getAllFlightsA():Observable<Flight[]> {
-    return this.httpClient.get<Flight[]>(`https://localhost:5011/v1.0/api/FlightApp/Airline/GetAllAirlinesAdmin`);
-    //throw new Error('Method not implemented.');
+    return this.httpClient.get<Flight[]>(this.airline_url+"GetAllAirlinesAdmin");
   }
 
 
