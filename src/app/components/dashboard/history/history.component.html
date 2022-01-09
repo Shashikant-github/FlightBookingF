@@ -27,15 +27,15 @@
     <div class="card mb-3 w-40" *ngFor="let booking of book">
       <!-- <img class="card-img-top" src="https://www.airport-technology.com/wp-content/uploads/sites/14/2021/03/pexels-jeshootscom-1201995-e1615985382761.jpg" alt="BookingHistory"> -->
       <div class="card-body" >
-        <h5 class="card-title"><b>PNR:</b>{{ booking.bookingPNR }}</h5>
-        <h5 class="card-title"><b>PassengerName:</b> {{ booking.bookingPassengerName}}</h5>
-        <h5 class="card-title"><b>Mobile No.: </b>{{ booking.mobile }} <b>Airline: </b>{{ booking.airline }}</h5>
+        <h5 class="card-title"><b>PNR:-</b>{{ booking.bookingPNR }}</h5>
+        <h5 class="card-title"><b>PassengerName:-</b> {{ booking.bookingPassengerName}}</h5>
+        <h5 class="card-title"><b>Mobile No.:- </b>{{ booking.mobile }} <b>Airline:- </b>{{ booking.airline }}</h5>
         <!-- <h5 class="card-title">Airline: {{ booking.airline }}</h5> -->
-        <h5 class="card-title"><b>Source:</b>{{ booking.source }} <b>Destination</b> {{ booking.destination }}</h5>
+        <h5 class="card-title"><b>Source:-</b>{{ booking.source }} <b>Destination-</b> {{ booking.destination }}</h5>
         <!-- <h5 class="card-title">Destination: {{ booking.destination }}</h5> -->
-        <h5 class="card-title"><b>Date Of Journey:</b> {{ booking.dateOfJourney }} <b>Date Of Booking:</b>{{ booking.bookingDate }}</h5>
+        <h5 class="card-title"><b>Date Of Journey:-</b> {{ booking.dateOfJourney }} <b>Date Of Booking:-</b>{{ booking.bookingDate }}</h5>
         <!-- <h5 class="card-title">Date Of Booking: {{ booking.bookingDate }}</h5> -->
-        <h5 class="card-title"><b>Email ID: </b>{{ booking.emailID }} <b>Ticket Status:</b> {{ booking.ticketStatus }}</h5>
+        <h5 class="card-title"><b>Email ID:-</b>{{ booking.emailID }} <b>Ticket Status:-</b> {{ booking.ticketStatus }}</h5>
         <!-- <h5 class="card-title">Ticket Status: {{ booking.ticketStatus }}</h5> -->
         <button type="submit" class="btn btn-danger" *ngIf="booking.ticketStatus=='Booked'"  (click)="cancelBooking(booking.bookingPNR)" >Cancel Ticket</button>
       </div>

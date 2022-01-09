@@ -1,23 +1,29 @@
-
-
-/* #btn-register{
-    align-items: center;
-    margin-left: 300px;
-} */
-p{text-align: center;
-    color:brown;
+ p{text-align: center;
+    color:rgb(6, 99, 238);
+    font-weight: bolder;
+    font-size: large;
     text-transform: uppercase;
-}
-
-.bookingForm{
-    min-width: 400px;
-    margin-left: 30%;
-    position: absolute;
-    border-radius: 4px ;
-    /* box-shadow: 10px 10px 5px grey; */
-    display:inline-flexbox;  
-}
-.button1{
+  }
+  .container1{
     display: flex;
     justify-content: space-around;
+    margin: 8px;
+    padding:10px;
   }
+  .bookingForm{
+      display: flex;
+      justify-content: space-around;  
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    min-width: auto;
+  }
+  .errorInvalid{
+    color:red;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  input.ng-invalid.ng-touched{  
+    border:1px solid red;  
+    }  

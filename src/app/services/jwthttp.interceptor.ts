@@ -17,8 +17,8 @@ intercept(req: HttpRequest<any>,
       next: HttpHandler): Observable<HttpEvent<any>> {
 
 const idToken = localStorage.getItem("MyToken");
-console.log(idToken);
-console.log("Jwt progress");
+//console.log(idToken);
+console.log("JWT progress");
 
 if (idToken) {
     const cloned = req.clone({

@@ -1,11 +1,20 @@
 export class User {
 
-    UserName?:string;
-    City?:string;
-    Password?:string;
+    userName?:string;
+    city?:string;
+    password?:string;
     role?:string;
     emailID?:string;
-    Mobile?:string;
-    Address?:string;
+    mobile?:string;
+    address?:string;
     
 }
+// {
+//     "userName": "Shashi",
+//     "password": "Shashi",
+//     "city": "Rio",
+//     "role": "Admin",
+//     "mobile": "9090909090",
+//     "emailID": "admin@gmail.com",
+//     "address": "Damascus"
+//   }

@@ -1,4 +1,5 @@
 <app-admin-nav></app-admin-nav>
+<app-profile></app-profile>
 <div class="panel">
     <mat-expansion-panel  class="disable_ripple">
         <mat-expansion-panel-header>
@@ -22,7 +23,8 @@
         <button mat-raised-button color="warn" (click)="addFlight()">Add</button>
     </mat-expansion-panel>
 </div>
-<app-display-flights-a></app-display-flights-a>
+<br>
+<!-- <app-display-flights-a></app-display-flights-a> -->
 <!-- public int AirlineId { get; set; }
         public string AirlineName { get; set; }
         public string Category { get; set; }
@@ -30,4 +32,15 @@
         public string Status { get; set; }
         public bool Delete { get; set; }
         #endregion -->
-
+    <div class="cards-layout">
+            <div class="card mb-3" style="width:12rem;"  *ngFor="let flight of flights">
+              <!-- <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking"> -->
+              <div class="card-body">
+                <h5 class="card-title"><b>Airline Name:-</b>{{flight.airlineName}}</h5>
+                <h5 class="card-title"><b>Airline Code:-</b>{{flight.airlineCode}}</h5>
+                <h5 class="card-title"><b>Category:-</b>{{flight.category}}</h5>
+                <h5 class="card-title"><b>Price:-</b>{{flight.ticketPrice}}</h5>
+                <h5 class="card-title"><b>Status:-</b>{{flight.status}}</h5>
+              </div>
+            </div>
+            </div>

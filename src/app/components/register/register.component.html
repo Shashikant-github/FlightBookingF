@@ -1,101 +1,119 @@
-<br><p>Registration</p>
 <div class="registerForm">
-  <form #registerForm="ngForm" (ngSubmit)="registerUserDetails(registerForm)">
-    <div class="form-group1">
-      <label for="exampleInputText" class="col-sm-2 col-form-label">Username</label>
-     
+  <form #registerForm1="ngForm" (ngSubmit)="registerUserDetails(registerForm1)">
+    <div class="container1"><p>Registration</p></div>
+    <div class="container1">
       <input
         type="text"
         class="form-control"
         id="exampleInputText"    
         placeholder="Please Enter Username"
         name="userName"
-        [(ngModel)]="registeredUser.UserName"
+        [(ngModel)]="registeredUser.userName"
+        required
+        #userName="ngModel"
       />
-  
       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
-    <br>
-    <div class="form-group1 row">
-      <label for="exampleInputPassword" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
+    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="userName.errors?.['required']">
+    Username is required.
+  </div></div>
+      
+    
+    <div class="container1">
       <input
         type="password"
         name="password"
         class="form-control"
         id="exampleInputPassword1"
         placeholder="Please Enter Password"
-        [(ngModel)]="registeredUser.Password"
+        [(ngModel)]="registeredUser.password"
+        required
+        #password="ngModel"
       /></div>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="password.errors?.['required']">
+      Password is required.
     </div>
-    <br>
-    <div class="form-group1 row">
-      <label for="exampleInputEmail" class="col-sm-2 col-form-label">EmailID</label>
-      <div class="col-sm-10">
+        </div>
+    <div class="container1">
       <input
         type="email"
-        name="email"
+        name="emailID"
         class="form-control"
         id="exampleInputEmail"
         placeholder="Please Enter EmailID"
         [(ngModel)]="registeredUser.emailID"
+        required
+        #email="ngModel"
       />
     </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert">
+  <div class="errorInvalid" *ngIf="email.errors?.['required']">
+    Email is required.
   </div>
-  <br>
-    <!-- <div class="form-group row mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
-      </div> -->
-
-    <div class="form-group1 row">
-      <label for="exampleInputMobile" class="col-sm-2 col-form-label">Mobile</label>
-      <div class="col-sm-10">
+      </div>
+  <div class="container1">
       <input
         type="text"
         name="mobile"
         class="form-control"
         id="exampleInputMobile"
         placeholder="Please Enter Mobile No."
-        [(ngModel)]="registeredUser.Mobile"
+        [(ngModel)]="registeredUser.mobile"
+        required
+        #mobile="ngModel"
       /></div>
+      <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="mobile.errors?.['required']">
+      Mobile no. is required.
     </div>
-    <br>
-    <div class="form-group1 row">
-      <label for="exampleInputCity" class="col-sm-2 col-form-label">City</label>
-      <div class="col-sm-10">
+        </div>
+    <div class="container1">
       <input
         type="text"
         name="city"
         class="form-control"
         id="exampleInputCity"
         placeholder="Please Enter City"
-        [(ngModel)]="registeredUser.City"
+        [(ngModel)]="registeredUser.city"
+        required
+        #city="ngModel"
       /></div>
+      <div *ngIf="city.invalid && (city.dirty || city.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="city.errors?.['required']">
+      City is required.
     </div>
-    <br>
-    <div class="form-group1 row">
-      <label for="exampleInputAddress" class="col-sm-2 col-form-label">Address</label>
-      <div class="col-sm-10">
+        </div>
+    <div class="container1">
       <input
         type="text"
         name="address"
         class="form-control"
         id="exampleInputAddress"
         placeholder="Please Enter Address"
-        [(ngModel)]="registeredUser.Address"
+        [(ngModel)]="registeredUser.address"
+        required
+        #address="ngModel"
       /></div>
+      <div *ngIf="address.invalid && (address.dirty || address.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="address.errors?.['required']">
+      Address is required.
     </div>
-    <br>
-    <div class="button1">
-      <button type="submit" class="btn btn-primary" id='btn-register'>Register</button>
-    <a routerLink="/login" id='btn-register'>Click here to Login</a></div>
+        </div>
+    <div class="container1">
+      <button type="submit" class="btn btn-primary" id='btn-register' [disabled]="!registerForm1.valid">Register</button></div>
+      <div class="container1"><a routerLink="/login" id='btn-register'>Click here to Login</a></div>
     <br> 
   </form>
 </div>
-<Br>
+
   
             
 <!--UserName?:string;

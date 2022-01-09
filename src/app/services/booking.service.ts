@@ -10,6 +10,8 @@ import { Booking } from '../models/booking';
 export class BookingService {
   booking?: Booking;
   booking_url=environment.booking_api_url;
+  airlineItem?:string;
+  
   constructor(private httpClient: HttpClient) {
     this.booking = new Booking();
   }

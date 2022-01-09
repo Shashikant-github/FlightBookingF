@@ -1,31 +1,29 @@
 p{text-align: center;
-    color:indianred;
-    text-transform: uppercase;
-    font-size: medium;
-    font-weight: bold;
+  color:rgb(6, 99, 238);
+  font-weight: bolder;
+  font-size: large;
+  text-transform: uppercase;
+}
+.container1{
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
 }
 .registerForm{
     min-width: 500px;
     display: flex;
-    /* align-items: center; */
     justify-content: space-around;  
-    
-    /* position: absolute;
-    border-radius: 4px ;
-    /* box-shadow: 10px 10px 5px grey; 
-    display:inline-flexbox;   */
-    display:flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   min-height: 100vh;
   min-width: auto;
 }
-.button1{
-    display: flex;
-    justify-content: space-around;
-  }
-  .form-group1{
-    display: flex;
-    justify-content: space-around;
-  }
+.errorInvalid{
+  color:red;
+  text-align: center;
+  text-transform: uppercase;
+}
+input.ng-invalid.ng-touched{  
+  border:1px solid red;  
+  }  

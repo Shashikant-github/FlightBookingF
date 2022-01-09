@@ -11,7 +11,7 @@ export class LogoutComponent implements OnInit {
   constructor(private toast:ToastrService) { }
 
   ngOnInit(): void {
-    this.toast.success("User Logged Out");
+    this.toast.success("Logged Out!");
     localStorage.clear();
 
     //localStorage.removeItem('MyToken');

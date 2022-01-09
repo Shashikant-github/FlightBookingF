@@ -12,20 +12,8 @@ import { RouteService } from 'src/app/services/route.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  bookingPNR: string = '';
-
-  constructor(private route: RouteService) {}
+  constructor() {}
 
   ngOnInit(): void {}
   
-  detailsByPNR() {
-    this.route.goToPNR();
-  }
-  detailsByEmail(){
-      this.route.goToHistory();
-  }
-  cancelByPNR(){
-      this.route.goToCancel();
-  }
-
 }

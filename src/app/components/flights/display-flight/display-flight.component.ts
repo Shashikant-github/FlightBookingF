@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Flight } from 'src/app/models/flight';
+import { BookingService } from 'src/app/services/booking.service';
 import { FlightService } from 'src/app/services/flight.service';
 import { RouteService } from 'src/app/services/route.service';
 
@@ -11,20 +12,24 @@ import { RouteService } from 'src/app/services/route.service';
 export class DisplayFlightComponent implements OnInit {
   flights?: Flight[];
   customExMessage?: string;
+  airlineItem?:string;
+
+  // get Data():string{
+  //   return this.bookService.airlineItem;
+  // }
+  // set Data(value:string){
+  //   return this.bookService.airlineItem=value;
+  // }
+  // @Output() airlinValue=new EventEmitter<string>(); 
+
   constructor(
     private flightService: FlightService,
-    private routeService: RouteService
+    private routeService: RouteService, private bookService:BookingService
   ) {
     // this.flights=new Array<Flight>();
   }
 
   ngOnInit(): void {
-    // this.flightService.getAllFlights().subscribe(res=>{
-    //   console.log(`Data from service: ${res}`);
-    //    this.flights=res;
-    //    console.log(this.flights.values);
-    //  console.log(res);
-    //  })
     this.flightService.getAllFlights().subscribe({
       next: (res) => {
         console.log(`Data from service: ${res}`);

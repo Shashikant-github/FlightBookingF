@@ -23,24 +23,10 @@ export class DisplayFlightsAComponent implements OnInit {
    //this.buttonName="";
    }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
     this.flightService.getAllFlightsA().subscribe({
       next: (res) => {
         console.log(`Data from service: ${res}`);
-        
-        // this.flights1 = res;
-        // this.flights1.forEach((flight)=>{
-        //  if(flight.status=="Active"){
-        //   flight.status="Block";
-
-        //  }
-          
-
-        //   this.buttonName="Block";
-        //   else
-        //   this.buttonName="Unblock";
-        // });  
         this.flights = res;    
         console.log(res);
       },

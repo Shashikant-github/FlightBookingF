@@ -27,9 +27,9 @@ export class UserService {
   }
   authUser(token: any) {
     let jsonObj=JSON.stringify(token);
-    console.log(jsonObj);
+    //console.log(jsonObj);
     const parsedJsonRes=JSON.parse(jsonObj);
-     console.log(`JSON Token: ${parsedJsonRes['token']}`);
+     //console.log(`JSON Token: ${parsedJsonRes['token']}`);
       localStorage.setItem('MyToken',parsedJsonRes['token']);
       localStorage.setItem('userName',parsedJsonRes['username']);
       localStorage.setItem('userRole',parsedJsonRes['userrole']);    

@@ -8,6 +8,16 @@
 .disable_ripple{
   background-color:darkseagreen;
   }
+  p{
+    text-align: center;
+    color:red;
+}
+.cards-layout{
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:space-around;
+} 
+
 /* .example-action-buttons {
     padding-bottom: 20px;
   }

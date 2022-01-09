@@ -4,13 +4,13 @@
   <div class="card mb-3" style="width:12rem;"  *ngFor="let flight of flights">
     <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking">
     <div class="card-body">
-      <h5 class="card-title">Airline Name: {{flight.airlineName}}</h5>
-      <h5 class="card-title">Airline Code: {{flight.airlineCode}}</h5>
-      <h5 class="card-title">Category: {{flight.category}}</h5>
-      <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
-      <h5 class="card-title">Status: {{flight.status}}</h5>
-      <h5 class="card-title">Deleted: {{flight.delete}}</h5>
-      <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button>
+      <h5 class="card-title"><b>Airline Name:</b>{{flight.airlineName}}</h5>
+      <h5 class="card-title"><b>Airline Code:</b>{{flight.airlineCode}}</h5>
+      <h5 class="card-title"><b>Category:</b>{{flight.category}}</h5>
+      <h5 class="card-title"><b>Price:</b>{{flight.ticketPrice}}</h5>
+      <h5 class="card-title"><b>Status:</b>{{flight.status}}<p><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button></p></h5>
+      <!-- <h5 class="card-title">Deleted: {{flight.delete}} <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >Delete</button></h5> -->
+      <!-- <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button> -->
       <!-- <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
       <button type="submit" class="btn btn-primary" routerLink="/bookFlight">Book Ticket</button> -->
     </div>
