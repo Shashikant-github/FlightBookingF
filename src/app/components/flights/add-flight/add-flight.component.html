@@ -19,7 +19,7 @@
             <mat-label class="title">Ticket Price</mat-label>
             <input matInput [(ngModel)]="flightObj.ticketPrice">
         </mat-form-field>
-        
+        <br>
         <button mat-raised-button color="warn" (click)="addFlight()">Add</button>
     </mat-expansion-panel>
 </div>
@@ -34,7 +34,7 @@
         #endregion -->
     <div class="cards-layout">
             <div class="card mb-3" style="width:12rem;"  *ngFor="let flight of flights">
-              <!-- <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking"> -->
+             <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking"> 
               <div class="card-body">
                 <h5 class="card-title"><b>Airline Name:-</b>{{flight.airlineName}}</h5>
                 <h5 class="card-title"><b>Airline Code:-</b>{{flight.airlineCode}}</h5>

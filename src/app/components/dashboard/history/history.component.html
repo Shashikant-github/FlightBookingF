@@ -1,43 +1,47 @@
 <app-nav-u></app-nav-u>
-<h1>
-    <form class="historyForm">
-      <div class="form-group">
-        <label for="exampleInputPNR">Get All Booking Details</label>
+<h3 class="historyForm">
+    <form >
+      <div class="container1">
         <input
-          type="text"
+          type="email"
           class="form-control"
           id="exampleInputEmailID"
-          placeholder="Please Enter emailID"
+          placeholder="Please Enter email ID"
           name="bookingEmail"
           [(ngModel)]="bookingEmail"
+          #email="ngModel"
+          required
         />
-      </div>
-      <div>
-        <br />
-        <button type="button" class="btn btn-primary" (click)="historyByEmail(bookingEmail)">
-            Submit
-        </button>
+        <div *ngIf="email.invalid && (email.dirty ||email.touched)"
+        class="alert">
+      <div class="errorInvalid" *ngIf="email.errors?.['required']">
+        Email is required.
+      </div></div>
+        <div class="container1"><button type="button" class="btn btn-primary" (click)="historyByEmail(bookingEmail)">
+          Submit
+      </button></div>  
       </div>
     </form>
-  </h1>
+  </h3>
 
   <!-- [(ngModel)]="bookingEmail" -->
 
   <div class="cards-layout" >
-    <div class="card mb-3 w-40" *ngFor="let booking of book">
-      <!-- <img class="card-img-top" src="https://www.airport-technology.com/wp-content/uploads/sites/14/2021/03/pexels-jeshootscom-1201995-e1615985382761.jpg" alt="BookingHistory"> -->
+    <div class="card mb-3 w-45" *ngFor="let booking of book">
+      <img class="card-img-top" *ngIf="booking.ticketStatus=='Cancelled'" src="https://image.shutterstock.com/image-vector/cancelled-stamp-square-grunge-sign-260nw-1726532743.jpg" alt="BookingHistory">
+      <img class="card-img-top" *ngIf="booking.ticketStatus=='Booked'" src="https://media.istockphoto.com/vectors/fully-booked-sticker-fully-booked-square-isolated-sign-fully-booked-vector-id1252369113?k=20&m=1252369113&s=170667a&w=0&h=NMjKngxN3qCsCxVvqx4lZYjz16H2uEROKCCdT4y_jj4=" alt="BookingHistory">
       <div class="card-body" >
         <h5 class="card-title"><b>PNR:-</b>{{ booking.bookingPNR }}</h5>
         <h5 class="card-title"><b>PassengerName:-</b> {{ booking.bookingPassengerName}}</h5>
-        <h5 class="card-title"><b>Mobile No.:- </b>{{ booking.mobile }} <b>Airline:- </b>{{ booking.airline }}</h5>
-        <!-- <h5 class="card-title">Airline: {{ booking.airline }}</h5> -->
+        <h5 class="card-title"><b>Mobile No.:- </b>{{ booking.mobile }} </h5>
+        <h5 class="card-title"><b>Airline:- </b>{{ booking.airline }} <b>Flight Code:- </b>{{ booking.airlineCode }}</h5>
         <h5 class="card-title"><b>Source:-</b>{{ booking.source }} <b>Destination-</b> {{ booking.destination }}</h5>
         <!-- <h5 class="card-title">Destination: {{ booking.destination }}</h5> -->
         <h5 class="card-title"><b>Date Of Journey:-</b> {{ booking.dateOfJourney }} <b>Date Of Booking:-</b>{{ booking.bookingDate }}</h5>
         <!-- <h5 class="card-title">Date Of Booking: {{ booking.bookingDate }}</h5> -->
         <h5 class="card-title"><b>Email ID:-</b>{{ booking.emailID }} <b>Ticket Status:-</b> {{ booking.ticketStatus }}</h5>
         <!-- <h5 class="card-title">Ticket Status: {{ booking.ticketStatus }}</h5> -->
-        <button type="submit" class="btn btn-danger" *ngIf="booking.ticketStatus=='Booked'"  (click)="cancelBooking(booking.bookingPNR)" >Cancel Ticket</button>
+        <button type="submit" class="CancelB"class="btn btn-danger" *ngIf="booking.ticketStatus=='Booked'"  (click)="cancelBooking(booking.bookingPNR)" >Cancel Ticket</button>
       </div>
     </div>
     </div>

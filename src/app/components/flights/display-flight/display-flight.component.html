@@ -13,10 +13,11 @@
 <div class="card mb-3" style="width:12rem;"  *ngFor="let flight of flights">
   <img class="card-img-top" src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/8/31/w900X450/AIRPORT1__.jpg?w=400&dpr=2.6" alt="FlightBookingUser">
   <div class="card-body">
-    <h5 class="card-title"><b>AirlineName:-</b>{{flight.airlineName}}</h5>
-    <h5 class="card-title"><b>Category:-</b>{{flight.category}}</h5>
-    <h5 class="card-title"><b>Ticket Price:-</b>{{flight.ticketPrice}}</h5>
-    <button type="submit" class="btn btn-primary" routerLink="/bookFlight">Book Ticket</button>
+    <h5 class="card-title"><b>Airline Name:-</b>{{flight.airlineName}}</h5>
+    <h5 class="card-title"><b>Flight Code:- </b>{{flight.airlineCode}}</h5>
+    <h5 class="card-title"><b>Category:- </b>{{flight.category}}</h5>
+    <h5 class="card-title"><b>Ticket Price:- </b>{{flight.ticketPrice}}</h5>
+    <button type="submit" class="btn btn-primary" [routerLink]="['/bookFlight']" [queryParams]="{airline:flight.airlineName,code:flight.airlineCode}">Book Ticket</button>
   </div>
 </div>
 </div>

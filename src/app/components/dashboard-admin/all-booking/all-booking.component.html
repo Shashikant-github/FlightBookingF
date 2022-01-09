@@ -2,19 +2,20 @@
 <app-profile></app-profile>
 <p>{{customExMessage}}</p>
 <div class="cards-layout">
-  <div class="card mb-3" style="width: 18rem;" *ngFor="let booking of book">
-    <!-- <img class="card-img-top" src="https://www.travelopro.com/public/images/contact/banner-7.png" alt="BookingAdmin"> -->
+  <div class="card mb-3" style="width: 20rem;" *ngFor="let booking of book">
+    <img class="card-img-top" src="https://www.travelopro.com/public/images/contact/banner-7.png" alt="BookingAdmin">
     <div class="card-body">
-      <h5 class="card-title">PNR: {{ booking.bookingPNR }}</h5>
-      <h5 class="card-title">PassengerName: {{ booking.bookingPassengerName}}</h5>
-      <h5 class="card-title">Mobile No.: {{ booking.mobile }}</h5>
-      <h5 class="card-title">Airline: {{ booking.airline }}</h5>
-      <h5 class="card-title">Source: {{ booking.source }}</h5>
-      <h5 class="card-title">Destination: {{ booking.destination }}</h5>
-      <h5 class="card-title">Date Of Journey: {{ booking.dateOfJourney }}</h5>
-      <h5 class="card-title">Date Of Booking: {{ booking.bookingDate }}</h5>
-      <h5 class="card-title">Email ID: {{ booking.emailID }}</h5>
-      <h5 class="card-title">Ticket Status: {{ booking.ticketStatus }}</h5>
+      <h5 class="card-title"><b>PNR:- </b>{{ booking.bookingPNR }}</h5>
+      <h5 class="card-title"><b>PassengerName:- </b>{{ booking.bookingPassengerName}}</h5>
+      <h5 class="card-title"><b>Mobile No.:- </b> {{ booking.mobile }}</h5>
+      <h5 class="card-title"><b>Airline:- </b>{{ booking.airline }}</h5>
+      <h5 class="card-title"><b>Flight Code:- </b>{{booking.airlineCode}}</h5>
+      <h5 class="card-title"><b>Source:- </b> {{ booking.source }}</h5>
+      <h5 class="card-title"><b>Destination:-</b> {{ booking.destination }}</h5>
+      <h5 class="card-title"><b>Date Of Journey:- </b>{{ booking.dateOfJourney }}</h5>
+      <h5 class="card-title"><b>Date Of Booking:- </b>{{ booking.bookingDate }}</h5>
+      <h5 class="card-title"><b>Email ID:- </b>{{ booking.emailID }}</h5>
+      <h5 class="card-title"><b>Ticket Status:- </b> {{ booking.ticketStatus }}</h5>
     </div>
   </div>
   </div>

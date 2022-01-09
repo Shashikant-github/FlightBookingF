@@ -8,6 +8,7 @@ export class Booking {
     source?:string;
     destination?:string;
     airline?:string;
+    airlineCode?:string;
     dateOfJourney?:string;
     bookingDate:string="";
     emailID?:string;

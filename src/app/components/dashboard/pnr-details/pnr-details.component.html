@@ -1,39 +1,46 @@
 <app-nav-u></app-nav-u>
-<h1>
-  <form class="pnrForm">
-    <div class="form-group">
-      <label for="exampleInputPNR">Booking Details by PNR</label>
+<h3 class="pnrform">
+  <form> 
+    <div class="container1">
       <input
         type="text"
         class="form-control"
         id="exampleInputPNR"
-        placeholder="Please Enter PNR no."
+        placeholder="Please Enter PNR"
+        required
         name="bookingPNR"
         [(ngModel)]="bookingPNR"
-      />
+        #bookingPNR1="ngModel"
+      /> 
+      <div *ngIf="bookingPNR1.invalid && (bookingPNR1.dirty ||bookingPNR1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingPNR1.errors?.['required']">
+      PNR is required.
+    </div></div>
+    <div class="container1">
+    <button type="button" class="btn btn-primary" (click)="searchByPNR()" >
+      Search
+    </button>
+  </div>
     </div>
-    <div>
-      <br />
-      <button type="button" class="btn btn-primary" (click)="searchByPNR()" >
-        Search
-      </button>
-    </div>
-  </form>
-</h1>
+</form>
+</h3>
 <div class="cards-layout">
-  <div class="card mb-3" style="width: 12rem;" *ngIf="isShown">
+  <div class="card mb-3 w-50" *ngIf="isShown">
     <img class="card-img-top" src="https://www.pnrstatus.io/wp-content/uploads/2020/03/cropped-screenshot-2.png" alt="BookingAdmin">
     <div class="card-body">
-      <h5 class="card-title">PNR: {{ book.bookingPNR }}</h5>
-      <h5 class="card-title">PassengerName: {{ book.bookingPassengerName}}</h5>
-      <h5 class="card-title">Mobile No.: {{ book.mobile }}</h5>
-      <h5 class="card-title">Airline: {{ book.airline }}</h5>
-      <h5 class="card-title">Source: {{ book.source }}</h5>
+      <!-- <h2 style="text-align: center; text-decoration: underline;">PNR STATUS</h2> -->
+      <h5 class="card-title"><b>PNR:-</b>{{ book.bookingPNR }}</h5>
+      <h5 class="card-title"><b>Passenger Name:-</b> {{ book.bookingPassengerName}}</h5>
+      <h5 class="card-title"><b>Mobile No.:- </b>{{ book.mobile }}</h5>
+      <h5 class="card-title"><b>Airline:-</b> {{ book.airline }} </h5>
+       <h5 class="card-title"><b>Flight Code:- </b>{{ book.airlineCode }}</h5>
+      <h5 class="card-title"><b>Source:- </b>{{ book.source }}</h5>
       <h5 class="card-title">Destination: {{ book.destination }}</h5>
-      <h5 class="card-title">Date Of Journey: {{ book.dateOfJourney }}</h5>
+      <h5 class="card-title"><b>Date Of Journey:- </b> {{ book.dateOfJourney }}</h5>
       <h5 class="card-title">Date Of Booking: {{ book.bookingDate }}</h5>
-      <h5 class="card-title">Email ID: {{ book.emailID }}</h5>
-      <h5 class="card-title">Ticket Status: {{ book.ticketStatus }}</h5>
+      <h5 class="card-title"><b>Email ID:- </b>{{ book.emailID }}</h5>
+      <h5 class="card-title"><b>Ticket Status:- </b> {{ book.ticketStatus }}</h5>
     </div>
   </div>
   </div>

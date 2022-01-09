@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnInit {
 isLogged?:boolean;
 isShown: boolean = true ; 
+isHide:boolean=true;
   constructor(public authService:UserService, private route:RouteService) { }
 
   ngOnInit(): void {
@@ -27,12 +28,16 @@ isShown: boolean = true ;
     this.isShown=!this.isShown;
     
     }
-    BackToHome(){
-      if(confirm("Going Home will logout you! Please confirm.")){
-        this.isShown=true;
-      localStorage.clear();
-      }
+    // BackToHome(){
+    //   if(confirm("Going Home will logout you! Please confirm.")){
+    //     this.isShown=true;
+    //   localStorage.clear();
+    //   }
     
       
-    }
+    // }
+
+toggleHide(){
+  this.isHide=false;
+}
 }

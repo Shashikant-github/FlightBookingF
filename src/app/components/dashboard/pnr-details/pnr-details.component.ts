@@ -10,7 +10,7 @@ import { RouteService } from 'src/app/services/route.service';
 })
 export class PnrDetailsComponent implements OnInit {
 
-  bookingPNR: string = '';
+bookingPNR: string = '';
  book:Booking;
  isShown: boolean = false ;
   constructor(
@@ -27,8 +27,8 @@ export class PnrDetailsComponent implements OnInit {
     // this.PNR=this.booking.bookingPNR.toString();
     console.log(this.bookingPNR);
     this.bookService.searchByPNR(this.bookingPNR).subscribe((res) => {
-      console.log(this.bookingPNR);
-      console.log(res);
+      // console.log(this.bookingPNR);
+      // console.log(res);
       // console.log(res.bookingDate);
       // this.book.bookingDate=res.bookingDate;
       if (res != null) {

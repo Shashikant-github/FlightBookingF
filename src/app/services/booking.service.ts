@@ -38,7 +38,7 @@ export class BookingService {
   }
   historyByEmail(bookingEmail: string): Observable<Booking[]> {
     return this.httpClient.get<Booking[]>(
-      this.booking_url+`GetBookingDetailsByEmail/` +
+      this.booking_url+`History/GetBookingDetailsByEmail/` +
         bookingEmail
     );
   }

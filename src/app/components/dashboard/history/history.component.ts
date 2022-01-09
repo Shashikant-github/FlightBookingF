@@ -20,11 +20,11 @@ export class HistoryComponent implements OnInit {bookingEmail1: string = '';
   ngOnInit(): void {}
   historyByEmail(bookingEmail:string) {
     this.bookingEmail1=bookingEmail;
+    console.log(bookingEmail);
     this.bookService.historyByEmail(bookingEmail).subscribe((res) => {
       console.log(res);
       if (res != null) {
         this.book = res;
-        
       } else {
         alert(`Email=${bookingEmail} Not Found.`);
       }
