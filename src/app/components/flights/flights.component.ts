@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Flight } from 'src/app/models/flight';
 import { FlightService } from 'src/app/services/flight.service';
 import { RouteService } from 'src/app/services/route.service';
@@ -35,4 +36,6 @@ export class FlightsComponent implements OnInit {
     this.routeService.goToLogin();
     // this.routeService.goToLogin();
   }
+  
+
 }

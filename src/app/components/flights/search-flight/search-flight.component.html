@@ -1,0 +1,60 @@
+<P>{{customExMessage}}</P>
+<br>
+<h3 class="searchForm">
+    <form class="row g-3" #SearchForm="ngForm" (ngSubmit)="SearchFlights(SearchForm)">
+        <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingSource"
+        placeholder="FROM Where"
+        required
+        name="bookingSource"
+        [(ngModel)]="bookingSource"
+        #bookingSource1="ngModel"
+      /> 
+      <div *ngIf="bookingSource1.invalid && (bookingSource1.dirty ||bookingSource1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource1.errors?.['required']">
+      From is required.
+    </div></div></div>
+    <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingDestination"
+        placeholder="TO Where"
+        required
+        name="bookingDestination"
+        [(ngModel)]="bookingDestination"
+        #bookingDestination1="ngModel"
+      /> 
+      <div *ngIf="bookingDestination1.invalid && (bookingDestination1.dirty ||bookingDestination1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingDestination1.errors?.['required']">
+      To is required.
+    </div></div></div>
+    <div class="col-auto">
+    <button type="submit" class="btn btn-primary" [disabled]="!SearchForm.valid" >
+      Search Flights
+    </button>
+  </div>   
+</form>
+</h3>
+<h1 style="text-align: center;color:indianred;font-size:larger;font-weight:bold;">{{noFlight}}</h1>
+<br>
+<div class="cards-layout">
+    <div class="card mb-3" style="width: 15rem;"  *ngFor="let flight of flightRes">
+      <img class="card-img-top" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb" alt="FlightBookingUser">
+      <div class="card-body">
+        <h5 class="card-title"><b>AirlineName:- </b> {{flight.airlineName}}</h5>
+        <h5 class="card-title"><b>Flight Code:- </b>{{flight.airlineCode}}</h5>
+        <h5 class="card-title"><b>Source:- </b>{{flight.source}}</h5>
+        <h5 class="card-title"><b>Destination:- </b>{{flight.destination}}</h5>
+        <h5 class="card-title"><b>Category:- </b> {{flight.category}}</h5>
+        <h5 class="card-title"><b>Ticket Price:- </b> {{flight.ticketPrice}}</h5>
+        <!-- <button type="submit" class="btn btn-primary" (click)="loginBook()">To Book plsease Login</button> -->
+        <a type="submit" mat-raised-button  (click)="loginBook()">To Book please Login</a>
+      </div>
+    </div>
+    </div>

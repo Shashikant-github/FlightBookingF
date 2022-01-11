@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
     this.userInfo.UserIPassword = loginForm.value.password;
 
     //this.userInfo.UserIPassword = "11";
-    // console.log(this.userInfo.UserIName);
-    // console.log(this.userInfo.UserIPassword);
+     console.log(this.userInfo.UserIName);
+     console.log(this.userInfo.UserIPassword);
 
     this.userService.loginUser(this.userInfo).subscribe((res) => {
       //console.log(`Token Generated:${res}`);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         // const res1 = this.userService.authUser(this.token);
         // console.log(`Token=${res1}`);
         this.userService.authUser(this.token);
-        if (localStorage.getItem('userRole') =='Admin') {
+        if (localStorage.getItem('userRole') =='ADMIN') {
           // this.routeService.goToAdmin();
           this.routeService.goToDashBoardAdmin();
           this.toaster.success('Logged in Successfully!');

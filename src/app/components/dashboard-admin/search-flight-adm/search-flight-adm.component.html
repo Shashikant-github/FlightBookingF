@@ -1,0 +1,61 @@
+<P>{{customExMessage}}</P>
+<br>
+<h3 class="searchForm">
+    <form class="row g-3" #SearchForm="ngForm" (ngSubmit)="SearchFlights(SearchForm)">
+        <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingSource"
+        placeholder="FROM Where"
+        required
+        name="bookingSource"
+        [(ngModel)]="bookingSource"
+        #bookingSource1="ngModel"
+      /> 
+      <div *ngIf="bookingSource1.invalid && (bookingSource1.dirty ||bookingSource1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingSource1.errors?.['required']">
+      From is required.
+    </div></div></div>
+    <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="EnterbookingDestination"
+        placeholder="TO Where"
+        required
+        name="bookingDestination"
+        [(ngModel)]="bookingDestination"
+        #bookingDestination1="ngModel"
+      /> 
+      <div *ngIf="bookingDestination1.invalid && (bookingDestination1.dirty ||bookingDestination1.touched)"
+      class="alert">
+    <div class="errorInvalid" *ngIf="bookingDestination1.errors?.['required']">
+      To is required.
+    </div></div></div>
+    <div class="col-auto">
+    <button type="submit" class="btn btn-primary" [disabled]="!SearchForm.valid" >
+      Search Flights
+    </button>
+  </div>   
+</form>
+</h3>
+<h1 style="text-align: center;color:indianred;font-size:larger;font-weight:bold;">{{noFlight}}</h1>
+<br>
+<div class="cards-layout">
+    <div class="card mb-3" style="width: 15rem;"  *ngFor="let flight of flightRes">
+      <img class="card-img-top" src="https://www.itij.com/sites/default/files/styles/hero_image_small/public/2020-04/passenger-plane-getting-ready-flight.jpg?itok=4GvkHW-d" alt="FlightBookingUser">
+      <div class="card-body">
+        <h5 class="card-title"><b>AirlineName:- </b> {{flight.airlineName}}</h5>
+        <h5 class="card-title"><b>Flight Code:- </b>{{flight.airlineCode}}</h5>
+        <h5 class="card-title"><b>Source:- </b>{{flight.source}}</h5>
+        <h5 class="card-title"><b>Destination:- </b>{{flight.destination}}</h5>
+        <h5 class="card-title"><b>Category:- </b> {{flight.category}}</h5>
+        <h5 class="card-title"><b>Ticket Price:- </b> {{flight.ticketPrice}}</h5>
+        <h5 class="card-title"><b>Status:- </b> {{flight.status}}</h5>
+        <!-- <button type="submit" class="btn btn-primary" (click)="loginBook()">To Book plsease Login</button> -->
+        <a type="submit" mat-raised-button (click)="blockAirline(flight.airlineCode)" >{{flight.status=='INACTIVE'?'Unblock':'Block'}}</a>
+      </div>
+    </div>
+    </div>

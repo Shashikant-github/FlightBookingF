@@ -1,9 +1,9 @@
-.headerLink{  
+#headerLink{  
     display: flex;
+    align-items: center;
  justify-content:space-around;
     text-transform: capitalize;
 }
-
 a:hover{
 background:rgb(196, 114, 114); 
 border-radius: 5px;
@@ -12,12 +12,12 @@ a{
   color:rgb(255, 255, 255);
   font-size: large;
   font-weight: 400;
-  
 }
 #item{
   color:rgb(241, 137, 137);
-  font-size: larg;
+  font-size: larger;
   font-weight: 500;
+ 
 }
 
 

@@ -8,8 +8,7 @@ import { Flight } from '../models/flight';
   providedIn: 'root'
 })
 export class FlightService {
-
- 
+  
   airline_url=environment.airline_api_url;
   constructor(private httpClient:HttpClient) {
   //  this.flight_URL=
@@ -32,7 +31,7 @@ export class FlightService {
   getAllFlightsA():Observable<Flight[]> {
     return this.httpClient.get<Flight[]>(this.airline_url+"GetAllAirlinesAdmin");
   }
-
-
-  
+  SearchFlights(source: any, destination: any):Observable<Flight[]> {
+    return this.httpClient.get<Flight[]>(this.airline_url+`GetAirlinesBySearch/`+ source +'/'+ destination);  
+  }
 }

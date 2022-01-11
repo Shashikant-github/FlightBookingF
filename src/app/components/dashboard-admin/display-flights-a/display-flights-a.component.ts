@@ -38,7 +38,7 @@ export class DisplayFlightsAComponent implements OnInit {
   blockAirline(user:string){
     console.log(user);
 
-    this.flightService.blockAirline(user,this.flightObj ).subscribe(res=>{
+    this.flightService.blockAirline(user,this.flightObj ).subscribe((res)=>{
       console.log(res);
         if(res){
         alert("Airline Blocked");
@@ -52,14 +52,5 @@ export class DisplayFlightsAComponent implements OnInit {
       }
     });
   }
-  // toggle() {
-  //   this.show = !this.show;
-
-  //   // CHANGE THE NAME OF THE BUTTON.
-  //   if(this.show)  
-  //     this.buttonName = "Hide";
-  //   else
-  //     this.buttonName = "Show";
-  // }
 
 }

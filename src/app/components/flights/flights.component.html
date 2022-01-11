@@ -1,11 +1,13 @@
 <P>{{customExMessage}}</P>
 <br>
-<div class="cards-layout">
+<div class="cards-layout" >
     <div class="card mb-3" style="width: 15rem;"  *ngFor="let flight of flights">
       <img class="card-img-top" src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/8/31/w900X450/AIRPORT1__.jpg?w=400&dpr=2.6" alt="FlightBookingUser">
       <div class="card-body">
         <h5 class="card-title"><b>AirlineName:- </b> {{flight.airlineName}}</h5>
         <h5 class="card-title"><b>Flight Code:- </b>{{flight.airlineCode}}</h5>
+        <h5 class="card-title"><b>Source:- </b> {{flight.source}}</h5>
+        <h5 class="card-title"><b>Destination:- </b> {{flight.destination}}</h5>
         <h5 class="card-title"><b>Category:- </b> {{flight.category}}</h5>
         <h5 class="card-title"><b>Ticket Price:- </b> {{flight.ticketPrice}}</h5>
         <!-- <button type="submit" class="btn btn-primary" (click)="loginBook()">To Book plsease Login</button> -->

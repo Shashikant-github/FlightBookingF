@@ -18,6 +18,8 @@ PNR?:string;
 airlineItem?:string;
 param1:string="Airway"
 param2:string="Airway";
+param3:string="Airway"
+param4:string="Airway";
 
 book:Booking;
  isShown: boolean = false ;
@@ -29,6 +31,8 @@ book:Booking;
     this.route.queryParams.subscribe(params=>{
       this.param1=params['airline'];
       this.param2=params['code'];
+      this.param3=params['source'];
+      this.param4=params['destination'];
     })
     this.book=new Booking();
    }
@@ -38,8 +42,10 @@ book:Booking;
     this.bookTicket=bookForm.value;
     this.bookTicket.airline=this.param1;
     this.bookTicket.airlineCode=this.param2;
-    // console.log(this.bookTicket.airline);
-    // console.log(this.bookTicket.airlineCode);
+    this.bookTicket.source=this.param3;
+    this.bookTicket.destination=this.param4;
+    console.log(this.bookTicket.source);
+    console.log(this.bookTicket.destination);
     // console.log(this.bookTicket.bookingPassengerName);
     // this.airlineItem=this.flightService.passValue();
     //this.bookTicket.dateOfJourney=this.bookTicket.dateOfJourney?.toTimeString();
@@ -47,8 +53,8 @@ book:Booking;
       console.log(`Response after Booking:${res.bookingPNR}`);
       this.PNR=res.bookingPNR;
       this.isShownForm=false;
-      alert("Ticket booked Successfully");
-      this.toaster.success('Logged in Successfully!');
+      //alert("Ticket booked Successfully");
+      this.toaster.success('Ticket booked Successfully!');
       this.bookService.searchByPNR(this.PNR).subscribe(res=>{
         if (res != null) {
           // bookPNR=new Booking();

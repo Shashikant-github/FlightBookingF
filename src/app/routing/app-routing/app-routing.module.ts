@@ -20,6 +20,9 @@ import { AllBookingComponent } from 'src/app/components/dashboard-admin/all-book
 
 import { FlightsComponent } from 'src/app/components/flights/flights.component';
 import { DisplayFlightsAComponent } from 'src/app/components/dashboard-admin/display-flights-a/display-flights-a.component';
+import { SearchFlightComponent } from 'src/app/components/flights/search-flight/search-flight.component';
+import { SearchFlightAdmComponent } from 'src/app/components/dashboard-admin/search-flight-adm/search-flight-adm.component';
+import { SearchFlightUserComponent } from 'src/app/components/dashboard/search-flight-user/search-flight-user.component';
 
  const routes:Routes=[
   // {path:'home',component:HomeComponent},
@@ -35,7 +38,8 @@ import { DisplayFlightsAComponent } from 'src/app/components/dashboard-admin/dis
     children: [
       { path: '', component: FlightsComponent, pathMatch: 'full'},
       { path: 'login', component: LoginComponent },
-      {path:'register',component:RegisterComponent},     
+      {path:'register',component:RegisterComponent},
+      {path:'searchFlight',component:SearchFlightComponent},      
     ]
 },
 
@@ -56,7 +60,8 @@ import { DisplayFlightsAComponent } from 'src/app/components/dashboard-admin/dis
     children: [
       { path: 'dashboardAdmin', component:DisplayFlightsAComponent, pathMatch: 'full'},
       { path:'addFlight',component:AddFlightComponent }, 
-      {path:'allBooking', component:AllBookingComponent},     
+      {path:'allBooking', component:AllBookingComponent}, 
+      {path:'searchAdmin', component:SearchFlightAdmComponent}  
     ]
 }, 
 
@@ -67,7 +72,8 @@ import { DisplayFlightsAComponent } from 'src/app/components/dashboard-admin/dis
     { path:'dashboard', component: DisplayFlightComponent, pathMatch: 'full'},
     {path:'bookFlight',component:BookFlightComponent},
     {path:"dashboard/pnrDetails",component:PnrDetailsComponent},
-    {path:"dashboard/history", component:HistoryComponent},     
+    {path:"dashboard/history", component:HistoryComponent},
+    {path:"searchUser", component:SearchFlightUserComponent},  
   ]
 },
 

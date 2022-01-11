@@ -2,13 +2,15 @@
 <p>{{customExMessage}}</p>
 <div class="cards-layout">
   <div class="card mb-3" style="width:15rem;"  *ngFor="let flight of flights">
-    <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking">
+    <img class="card-img-top" src="https://venturebeat.com/wp-content/uploads/2021/12/GettyImages-1247807595.jpg?fit=2119%2C1414&strip=all" alt="FlightBooking">
     <div class="card-body">
       <h5 class="card-title"><b>Airline Name:- </b>{{flight.airlineName}}</h5>
       <h5 class="card-title"><b>Airline Code:- </b>{{flight.airlineCode}}</h5>
+      <h5 class="card-title"><b>Source:- </b>{{flight.source}}</h5>
+      <h5 class="card-title"><b>Destination:- </b>{{flight.destination}}</h5>
       <h5 class="card-title"><b>Category:- </b>{{flight.category}}</h5>
       <h5 class="card-title"><b>Price:- </b>{{flight.ticketPrice}}</h5>
-      <h5 class="card-title"><b>Status:- </b>{{flight.status}}  <a type="submit" mat-raised-button (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</a></h5>
+      <h5 class="card-title"><b>Status:- </b>{{flight.status}}  <a type="submit" mat-raised-button (click)="blockAirline(flight.airlineCode)" >{{flight.status=='INACTIVE'?'Unblock':'Block'}}</a></h5>
       <!-- <h5 class="card-title">Deleted: {{flight.delete}} <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >Delete</button></h5> -->
       <!-- <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button> -->
       <!-- <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>

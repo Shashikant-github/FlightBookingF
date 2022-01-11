@@ -1,10 +1,12 @@
-<header class="headerLink">
-    <ul   class="nav" > 
+<ul id="headerLink"  class="nav" > 
         <li class="nav-item">
-          <a class="nav-link disabled" id="item" >Welcome to Flight Booking!</a>
+          <a class="nav-link disabled" id="item" >Welcome  to  Flight  Booking!</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="home" (click)="toggleShow()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/searchFlight">Search Flight</a>
         </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/register" *ngIf="isShown" (click)="toggleShow()">New User? Register here</a>
@@ -13,4 +15,3 @@
             <a class="nav-link" routerLink="/login" *ngIf="isShown" (click)="toggleShow()">Login</a>
           </li>
           </ul>
-</header>

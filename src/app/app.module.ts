@@ -44,6 +44,9 @@ import { AllBookingComponent } from './components/dashboard-admin/all-booking/al
 import { ErrorInterceptor } from './services/error.interceptor';
 import { AdminNavComponent } from './components/dashboard-admin/admin-nav/admin-nav.component';
 import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
+import { SearchFlightComponent } from './components/flights/search-flight/search-flight.component';
+import { SearchFlightAdmComponent } from './components/dashboard-admin/search-flight-adm/search-flight-adm.component';
+import { SearchFlightUserComponent } from './components/dashboard/search-flight-user/search-flight-user.component';
 
 
 @NgModule({
@@ -67,7 +70,10 @@ import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
     DisplayFlightsAComponent,
     AllBookingComponent,
     AdminNavComponent,
-    NavUComponent
+    NavUComponent,
+    SearchFlightComponent,
+    SearchFlightAdmComponent,
+    SearchFlightUserComponent
   ],
   imports: [
     BrowserModule,
