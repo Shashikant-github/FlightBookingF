@@ -45,10 +45,11 @@ export class LoginComponent implements OnInit {
         // console.log(`Token=${res1}`);
         this.userService.authUser(this.token);
         if (localStorage.getItem('userRole') =='Admin') {
-          this.routeService.goToAdmin();
+          // this.routeService.goToAdmin();
+          this.routeService.goToDashBoardAdmin();
           this.toaster.success('Logged in Successfully!');
         } else {
-          this.routeService.goToUser();
+          this.routeService.goToDashboard();
           this.toaster.success('Logged in Successfully!');
         }
       } else {

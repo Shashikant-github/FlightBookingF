@@ -1,23 +1,20 @@
-p{text-align: center;
-  color:rgb(6, 99, 238);
-  font-weight: bolder;
-  font-size: large;
-  text-transform: uppercase;
+.registerForm{
+  display: flex;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+min-width: auto;
 }
 .container1{
   display: flex;
   justify-content: space-around;
   margin: 8px;
 }
-.registerForm{
-    min-width: 500px;
-    display: flex;
-    justify-content: space-around;  
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  min-width: auto;
+
+p{color:indianred;
+  font-weight: bolder;
+  font-size: medium;
+  text-transform: uppercase;
 }
 .errorInvalid{
   color:red;
@@ -27,3 +24,8 @@ p{text-align: center;
 input.ng-invalid.ng-touched{  
   border:1px solid red;  
   }  
+  a:hover{
+    background-color:lightcoral;
+        opacity: 0.8;
+        border-radius: 2px;
+  }

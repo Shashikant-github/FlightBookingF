@@ -7,8 +7,12 @@ export class User {
     emailID?:string;
     mobile?:string;
     address?:string;
-    
+
 }
+/**
+ *
+ */
+
 // {
 //     "userName": "Shashi",
 //     "password": "Shashi",

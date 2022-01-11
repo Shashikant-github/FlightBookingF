@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,11 +30,9 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PnrDetailsComponent } from './components/dashboard/pnr-details/pnr-details.component';
 import { HistoryComponent } from './components/dashboard/history/history.component';
-import { CancelComponent } from './components/dashboard/cancel/cancel.component';
+
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
-import { UpdateAirlineComponent } from './components/dashboard-admin/update-airline/update-airline.component';
-import { DeleteAirlineComponent } from './components/dashboard-admin/delete-airline/delete-airline.component';
-import { AddBulkComponent } from './components/dashboard-admin/add-bulk/add-bulk.component';
+
 import { HomeComponent } from './components/home/home.component';
 
 
@@ -53,7 +49,6 @@ import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
@@ -67,11 +62,7 @@ import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
     FooterComponent,
     PnrDetailsComponent,
     HistoryComponent,
-    CancelComponent,
     DashboardAdminComponent,
-    UpdateAirlineComponent,
-    DeleteAirlineComponent,
-    AddBulkComponent,
     HomeComponent,
     DisplayFlightsAComponent,
     AllBookingComponent,
@@ -95,7 +86,7 @@ import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
    MatInputModule,
    FormsModule,
    ToastrModule.forRoot({
-    timeOut: 5000,
+    timeOut: 500,
     positionClass: 'toast-top-right',
     preventDuplicates: true,
   }),

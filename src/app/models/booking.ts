@@ -10,7 +10,7 @@ export class Booking {
     airline?:string;
     airlineCode?:string;
     dateOfJourney?:string;
-    bookingDate:string="";
+    bookingDate?:string;
     emailID?:string;
     ticketStatus?:string;
     

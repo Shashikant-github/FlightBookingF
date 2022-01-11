@@ -1,5 +1,6 @@
-<app-admin-nav></app-admin-nav>
-<app-profile></app-profile>
+<!-- <app-admin-nav></app-admin-nav>
+<app-profile></app-profile> -->
+<p>{{customExMessage}}</p>
 <div class="panel">
     <mat-expansion-panel  class="disable_ripple">
         <mat-expansion-panel-header>
@@ -33,7 +34,7 @@
         public bool Delete { get; set; }
         #endregion -->
     <div class="cards-layout">
-            <div class="card mb-3" style="width:12rem;"  *ngFor="let flight of flights">
+            <div class="card mb-3" style="width:15rem;"  *ngFor="let flight of flights">
              <img class="card-img-top" src="https://s.hdnux.com/photos/01/10/15/65/18931014/5/rawImage.jpg" alt="FlightBooking"> 
               <div class="card-body">
                 <h5 class="card-title"><b>Airline Name:-</b>{{flight.airlineName}}</h5>

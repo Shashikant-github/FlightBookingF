@@ -8,7 +8,7 @@
       <h5 class="card-title"><b>Airline Code:- </b>{{flight.airlineCode}}</h5>
       <h5 class="card-title"><b>Category:- </b>{{flight.category}}</h5>
       <h5 class="card-title"><b>Price:- </b>{{flight.ticketPrice}}</h5>
-      <h5 class="card-title"><b>Status:- </b>{{flight.status}}<p><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button></p></h5>
+      <h5 class="card-title"><b>Status:- </b>{{flight.status}}  <a type="submit" mat-raised-button (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</a></h5>
       <!-- <h5 class="card-title">Deleted: {{flight.delete}} <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >Delete</button></h5> -->
       <!-- <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button> -->
       <!-- <h5 class="card-title">Ticket Price: {{flight.ticketPrice}}</h5>
@@ -16,33 +16,3 @@
     </div>
   </div>
   </div>
-
-<!-- <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <!-- <th scope="col">#</th>
-        <th scope="col">AirlineName</th>
-        <th scope="col">Category</th>
-        <th scope="col">Ticket Price</th>  
-        <th scope="col">Status</th>
-        <th scope="col">Deleted</th>
-        <th scope="col">Block/Unblock</th>
-        <!-- <th scope="col">Unblock</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let flight of flights">
-        <!-- <th scope="row">1</th> 
-        <td>{{flight.airlineName}}</td>
-        <td>{{flight.category}}</td>
-        <td>{{flight.ticketPrice}}</td>
-        <td>{{flight.status}}</td>
-        <td>{{flight.delete}}</td>
-        <td><button type="submit" class="btn btn-warning" (click)="blockAirline(flight.airlineName)" >{{flight.status}}</button></td>
-        <!-- <td><button type="submit" class="btn btn-primary" (click)="blockAirline(flight.airlineName)">Unblock</button></td>
-      </tr>
-    </tbody>
-  </table> -->
-  <!-- *ngIf="show" (click)="toggle()" -->
-  <!-- *ngIF="(flight.status="Inactive")" -->
-  <!-- [(ngModel)]="airlineName=flight.airlineName" -->

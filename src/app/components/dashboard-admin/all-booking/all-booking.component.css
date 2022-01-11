@@ -13,3 +13,5 @@ p{
     height: 5vw;
     object-fit: cover;
   }
+  .card:hover{
+    background-color: rgb(196, 114, 114)}

@@ -11,13 +11,16 @@ export class HeaderComponent implements OnInit {
 isLogged?:boolean;
 isShown: boolean = true ; 
 isHide:boolean=true;
+isOut:boolean=false;
   constructor(public authService:UserService, private route:RouteService) { }
 
   ngOnInit(): void {
-    
+  this.isHide=true;
+  this.isShown=true;
+  this.isOut=false;
   }
   toggleShow() {
-
+    this.isOut=true;
     // if(localStorage.getItem('userName')!=null){
     //   console.log(localStorage.getItem('userName'));
     //   this.isShown=false;
@@ -37,7 +40,12 @@ isHide:boolean=true;
       
     // }
 
-toggleHide(){
-  this.isHide=false;
-}
+// toggleHide(){
+//   this.isHide=false;
+//   this.isOut=true;
+// }
+// toggleShow2(){
+//   this.isHide=true;
+//   this.isShown=true;
+// }
 }

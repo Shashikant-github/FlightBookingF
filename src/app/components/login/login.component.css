@@ -22,12 +22,14 @@
 a:hover{
     background-color:lightcoral;
         opacity: 0.8;
+        border-radius: 2px;
   }
   p{
-    color:rgb(6, 99, 238);
+    color:indianred;
     font-weight: bolder;
     font-size: large;
     text-transform: uppercase;
+ 
   }
   input.ng-invalid.ng-touched{  
     border:1px solid red;  

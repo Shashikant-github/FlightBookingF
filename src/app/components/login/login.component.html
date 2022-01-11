@@ -14,6 +14,7 @@
               [(ngModel)]="userInfo.UserIName"
               #userName="ngModel"
             /></div>
+         
             <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
         class="alert">
       <div class="errorInvalid" *ngIf="userName.errors?.['required']">
@@ -32,6 +33,7 @@
           [(ngModel)]="userInfo.UserIPassword" 
           #password="ngModel"
         /></div>
+       
       <div *ngIf="password.invalid && (password.dirty || password.touched)"
     class="alert">
   <div class="errorInvalid" *ngIf="password.errors?.['required']">

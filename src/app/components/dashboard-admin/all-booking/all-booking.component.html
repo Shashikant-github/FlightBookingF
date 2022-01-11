@@ -1,15 +1,16 @@
-<app-admin-nav></app-admin-nav>
-<app-profile></app-profile>
+<!-- <app-admin-nav></app-admin-nav>
+<app-profile></app-profile> -->
 <p>{{customExMessage}}</p>
 <div class="cards-layout">
   <div class="card mb-3" style="width: 20rem;" *ngFor="let booking of book">
-    <img class="card-img-top" src="https://www.travelopro.com/public/images/contact/banner-7.png" alt="BookingAdmin">
+    <img class="card-img-top" *ngIf="booking.ticketStatus=='Cancelled'" src="https://image.shutterstock.com/image-vector/cancelled-stamp-square-grunge-sign-260nw-1726532743.jpg" alt="BookingHistory">
+      <img class="card-img-top" *ngIf="booking.ticketStatus=='Booked'" src="https://theskincaremillionaire.typepad.com/.a/6a01116888abb7970c01a73d8adffd970d-800wi" alt="BookingHistory">
     <div class="card-body">
       <h5 class="card-title"><b>PNR:- </b>{{ booking.bookingPNR }}</h5>
       <h5 class="card-title"><b>PassengerName:- </b>{{ booking.bookingPassengerName}}</h5>
       <h5 class="card-title"><b>Mobile No.:- </b> {{ booking.mobile }}</h5>
-      <h5 class="card-title"><b>Airline:- </b>{{ booking.airline }}</h5>
-      <h5 class="card-title"><b>Flight Code:- </b>{{booking.airlineCode}}</h5>
+      <h5 class="card-title"><b>Airline:- </b>{{ booking.airline }} <span> </span><b>Flight Code:- </b>{{booking.airlineCode}}</h5>
+     <!-- // <h5 class="card-title"><b>Flight Code:- </b>{{booking.airlineCode}}</h5> -->
       <h5 class="card-title"><b>Source:- </b> {{ booking.source }}</h5>
       <h5 class="card-title"><b>Destination:-</b> {{ booking.destination }}</h5>
       <h5 class="card-title"><b>Date Of Journey:- </b>{{ booking.dateOfJourney }}</h5>

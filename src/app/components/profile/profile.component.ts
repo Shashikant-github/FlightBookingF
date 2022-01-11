@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 userName?:string|null;
   constructor() {
-    //this.userName="";
    }
 
   ngOnInit(): void {

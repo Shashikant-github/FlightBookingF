@@ -10,7 +10,7 @@ import { BookingService } from 'src/app/services/booking.service';
 })
 export class HistoryComponent implements OnInit {bookingEmail1: string = '';
  bookingEmail: string = '';
-  book?: Booking[];
+ public book?: Booking[];
 
   constructor(
     private bookService: BookingService,
@@ -33,7 +33,7 @@ export class HistoryComponent implements OnInit {bookingEmail1: string = '';
   cancelBooking(cancelPNR: string = '') {
     console.log(`Pnr ${cancelPNR}`);
     console.log(this.bookingEmail1);
-    if (confirm(`Are you sure want to cancel the Ticket with ${cancelPNR}`)) {
+    if (confirm(`Please click OK to cancel the Ticket with PNR:${cancelPNR}.`)) {
       this.bookService.cancelByPNR(cancelPNR).subscribe((res) => {
         // console.log(res);
         //console.log(res.bookingDate);

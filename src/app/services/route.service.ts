@@ -59,4 +59,10 @@ constructor(private route: Router) {}
   goToAllBooking() {
     this.route.navigate(['allBooking']);
   }
+  goToRoot() {
+    this.route.navigate(['root']);
+  }
+  goToHeader() {
+    this.route.navigate(['header']);
+  }
 }

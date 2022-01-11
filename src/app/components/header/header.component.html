@@ -1,19 +1,16 @@
-<!-- <p>header works!</p>-->
-<!-- <h1>Flight App</h1>  -->
 <header class="headerLink">
-    <h1>Welcome to Flight Booking</h1>
-    <a routerLink="home" *ngIf="isHide" (click)="toggleShow()">Home</a>
-        <a routerLink="register" *ngIf="isShown" (click)="toggleShow()" >New User? Register here</a>
-        <a routerLink="login" *ngIf="isShown" (click)="toggleShow()" (click)="toggleHide()">Login</a></header>
-    
-    <!-- <a (click)="logout()" *ngIf='authService.isLoggedIn$|async' >Logout</a> -->
-    <!-- <a routerLink="logout">Logout</a> -->
-    <!-- <a routerLink="dashboard">Dashboard</a>
-    
-    <a routerLink="dashboardAdmin">Dashboard Admin</a> -->
-    <!-- <a routerLink="displayFlights">Show Flights</a>
-    <a routerLink="addFlight">Add Flight</a>
-    <a routerLink="searchFlight">Search Flight</a>
-    <a routerLink="bookFlight">Book Flight</a> -->    
-
-<!-- <app-profile></app-profile> -->
+    <ul   class="nav" > 
+        <li class="nav-item">
+          <a class="nav-link disabled" id="item" >Welcome to Flight Booking!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" (click)="toggleShow()">Home</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register" *ngIf="isShown" (click)="toggleShow()">New User? Register here</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" *ngIf="isShown" (click)="toggleShow()">Login</a>
+          </li>
+          </ul>
+</header>

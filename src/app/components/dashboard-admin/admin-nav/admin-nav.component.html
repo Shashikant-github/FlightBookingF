@@ -1,17 +1,18 @@
-<ul id="navAdm" class="nav justify-content-end">
+<ul id="navAdm" class="nav">
   <li class="nav-item">
-    <a class="nav-link" routerLink="/dashboardAdmin">Dashboard</a>
+   <a  class="nav-link disabled" id="item"><app-profile></app-profile> to Flight Booking!</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/dashboardAdmin">Admin Dashboard</a>
   </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/addFlight">Add Airline</a>
     </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" routerLink="/dashboardAdmin/delete">Delete Airline</a>
-    </li> -->
     <li class="nav-item">
       <a class="nav-link" routerLink="/allBooking">All Booking</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/logout">Logout</a>
+      <a class="nav-link"  routerLink="/logout">Logout</a>
     </li>
   </ul>
+

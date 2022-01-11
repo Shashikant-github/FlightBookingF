@@ -1,24 +1,23 @@
 .headerLink{  
     display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    /* background-color: rgba(117, 190, 218, 0.6);  */
-    opacity: 1;
-    text-transform: uppercase;
-    align-items: center;
+ justify-content:space-around;
+    text-transform: capitalize;
 }
-h1{
-    color:indianred;
-    text-transform: uppercase;
-    font-size: x-large;
-    font-weight: bolder;
-    /* margin-top:0.1%; */
-}
+
 a:hover{
-    background-color:lightcoral;
-        opacity: 0.8;
-  }
-a{
-    color: mediumblue;
-    font-size: medium;
+background:rgb(196, 114, 114); 
+border-radius: 5px;
 }
+a{
+  color:rgb(255, 255, 255);
+  font-size: large;
+  font-weight: 400;
+  
+}
+#item{
+  color:rgb(241, 137, 137);
+  font-size: larg;
+  font-weight: 500;
+}
+
+

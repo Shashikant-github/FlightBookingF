@@ -31,7 +31,8 @@ export class FlightsComponent implements OnInit {
     });
   }
   loginBook(){
-    alert("Please login to proceed further for Booking");
+    //alert("Please login to proceed further for Booking");
+    this.routeService.goToLogin();
     // this.routeService.goToLogin();
   }
 }

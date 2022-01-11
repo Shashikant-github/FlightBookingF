@@ -1,15 +1,24 @@
+#navUser{  
+  display: flex;
+  align-items: center;
+justify-content:space-around;
+  text-transform: capitalize;
+}
 
-#navUser{
-    font-size: large;
-    font-weight: bold;
-    background-color: rgba(117, 190, 218, 0.6); 
-    text-transform: uppercase;
-    opacity:1 ;
+a:hover{
+background:rgb(196, 114, 114); 
+border-radius: 5px;
 }
 a{
-    color:indianred;
+  color:rgb(255, 255, 255);
+  font-size: large;
+  font-weight: 400;
+  
 }
-a:hover{
-    background-color:lightgreen;
-            opacity: 0.8;
-  }
+#item{
+  color:rgb(241, 137, 137);
+  font-size: larg;
+  font-weight: 500;
+}
+
+

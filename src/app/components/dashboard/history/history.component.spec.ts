@@ -1,9 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Booking } from 'src/app/models/booking';
 
 import { HistoryComponent } from './history.component';
 
 describe('HistoryComponent', () => {
   let component: HistoryComponent;
+ 
+
   let fixture: ComponentFixture<HistoryComponent>;
 
   beforeEach(async () => {
@@ -20,6 +23,7 @@ describe('HistoryComponent', () => {
   });
 
   it('should create', () => {
+    
     expect(component).toBeTruthy();
   });
 });

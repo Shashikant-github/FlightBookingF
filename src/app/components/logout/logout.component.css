@@ -1,16 +1,10 @@
-a:hover{
-        background-color:lightcoral;
-            opacity: 0.8;
-      }
+
 .logoutForm{
     display:flex;
     justify-content: space-around;
     align-items: center;
-    text-align: center;
-        /* width: 400px;
-        min-height:100px;
-        margin-left: 30%;
-        margin-top: 5%; */   
+    text-align: center;   
+margin-top: 50Px;
     }   
 .shadow1{
     font-size: medium;
@@ -19,3 +13,18 @@ a:hover{
     border-radius: 5px ;
     box-shadow: 10px 10px 5px 2px rgb(156, 98, 98);
 }
+button:hover{
+    color: indianred;
+}
+p{
+    color:indianred;
+    font-weight: bolder;
+    font-size: medium;
+    text-transform: capitalize;
+ 
+  }
+  a:hover{
+    background-color:lightcoral;
+        opacity: 0.8;
+        border-radius: 3px;
+  }
