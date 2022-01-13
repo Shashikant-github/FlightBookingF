@@ -26,7 +26,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label class="title">Ticket Price</mat-label>
-            <input matInput [(ngModel)]="flightObj.ticketPrice">
+            <input matInput type="number" [(ngModel)]="flightObj.ticketPrice">
         </mat-form-field>
         <br>
         <button mat-raised-button color="warn" (click)="addFlight()">Add Flight</button>
@@ -50,7 +50,7 @@
                 <h5 class="card-title"><b>Source:-</b>{{flight.source}}</h5>
                 <h5 class="card-title"><b>Destination:-</b>{{flight.destination}}</h5>
                 <h5 class="card-title"><b>Category:-</b>{{flight.category}}</h5>
-                <h5 class="card-title"><b>Price:-</b>{{flight.ticketPrice}}</h5>
+                <h5 class="card-title"><b>Price:- Rs.</b>{{flight.ticketPrice}}/-</h5>
                 <h5 class="card-title"><b>Status:-</b>{{flight.status}}</h5>
               </div>
             </div>

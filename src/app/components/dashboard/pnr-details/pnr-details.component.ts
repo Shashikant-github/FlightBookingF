@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import jsPDF from 'jspdf';
 import { Booking } from 'src/app/models/booking';
 import { BookingService } from 'src/app/services/booking.service';
 import { RouteService } from 'src/app/services/route.service';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-pnr-details',
@@ -10,6 +12,8 @@ import { RouteService } from 'src/app/services/route.service';
 })
 export class PnrDetailsComponent implements OnInit {
 
+  
+ @ViewChild('content') content?:ElementRef;
 bookingPNR: string = '';
  book:Booking;
  isShown: boolean = false ;
@@ -23,7 +27,6 @@ bookingPNR: string = '';
   ngOnInit(): void {}
 
   searchByPNR() {
-    
     // this.PNR=this.booking.bookingPNR.toString();
     console.log(this.bookingPNR);
     this.bookService.searchByPNR(this.bookingPNR).subscribe((res) => {
@@ -40,10 +43,30 @@ bookingPNR: string = '';
         this.isShown = false;
         //this.book=res;
         alert(`PNR=${this.bookingPNR} Not Found.`);
-      }
-      
+      }     
     });
   }
+
+  SavePDF(){  
+   
+    var DATA=this.content?.nativeElement;
+
+   html2canvas(DATA).then(canvas => {
+    
+    let fileWidth = 208;
+    let fileHeight = canvas.height * fileWidth / canvas.width;
+    
+    const FILEURI = canvas.toDataURL('image/jpeg');
+    //canvas.toBlob
+    let PDF = new jsPDF('p', 'mm', 'a4');
+    let position = 0;
+    PDF.addImage(FILEURI, 'jpeg', 0, position, fileWidth, fileHeight);
+    PDF.save(`${this.bookingPNR}_Air Ticket.pdf`);
+    PDF.output("dataurlnewwindow");
+   // doc.output('dataurlnewwindow');
+}); 
+    
+  }  
   
 }
 

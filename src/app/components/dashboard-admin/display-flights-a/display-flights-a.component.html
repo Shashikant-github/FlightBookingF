@@ -9,7 +9,7 @@
       <h5 class="card-title"><b>Source:- </b>{{flight.source}}</h5>
       <h5 class="card-title"><b>Destination:- </b>{{flight.destination}}</h5>
       <h5 class="card-title"><b>Category:- </b>{{flight.category}}</h5>
-      <h5 class="card-title"><b>Price:- </b>{{flight.ticketPrice}}</h5>
+      <h5 class="card-title"><b>Price:- Rs. </b>{{flight.ticketPrice}}/-</h5>
       <h5 class="card-title"><b>Status:- </b>{{flight.status}}  <a type="submit" mat-raised-button (click)="blockAirline(flight.airlineCode)" >{{flight.status=='INACTIVE'?'Unblock':'Block'}}</a></h5>
       <!-- <h5 class="card-title">Deleted: {{flight.delete}} <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >Delete</button></h5> -->
       <!-- <button type="submit" class="btn btn-warning"  (click)="blockAirline(flight.airlineCode)" >{{flight.status=='Inactive'?'Unblock':'Block'}}</button> -->

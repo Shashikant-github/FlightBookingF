@@ -36,11 +36,12 @@ export class AddFlightComponent implements OnInit {
     console.log(`Added Flight Name :${this.flightObj.airlineName}`);
     this.flightObj.delete = false;
     this.flightObj.status = 'Active';
+    this.flightObj.ticketPrice=this.flightObj.ticketPrice?.toString();
     console.log(this.flightObj.category);
     console.log(this.flightObj.status);
     this.flightService.addFlight(this.flightObj).subscribe((res) => {
       this.toaster.success('Flight Added');
-      alert(`Flight Added Name: ${this.flightObj.airlineName}, Category: ${this.flightObj.category}, Price:${this.flightObj.ticketPrice }`);
+      alert(`Flight Added Name: ${this.flightObj.airlineName}, Category: ${this.flightObj.category}, Price: Rs.${this.flightObj.ticketPrice }/-`);
       this.ngOnInit();
     });
   }

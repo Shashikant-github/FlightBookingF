@@ -23,10 +23,11 @@ export class RegisterComponent implements OnInit {
 registerUserDetails(regForm:NgForm){
   // console.log(regForm.value);
    this.registeredUser=regForm.value;
- 
+ this.registeredUser.mobile=this.registeredUser.mobile?.toString();
   this.registeredUser.role="Reader";
   this.userService.registerUser(this.registeredUser).subscribe(res=>{
     console.log(`Response after Registration:${res}`);
+    alert("Registered Successfully. Please login to proceed further.")
     this.toast.success("Registered Successfully");
   })
   this.routerService.goToLogin();

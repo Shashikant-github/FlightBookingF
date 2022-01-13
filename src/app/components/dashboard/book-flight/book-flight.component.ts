@@ -1,11 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import  jsPDF from 'jspdf';
 import { ToastrService } from 'ngx-toastr';
 import { Booking } from 'src/app/models/booking';
 import { BookingService } from 'src/app/services/booking.service';
 import { FlightService } from 'src/app/services/flight.service';
 import { RouteService } from 'src/app/services/route.service';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-book-flight',
@@ -25,6 +27,8 @@ book:Booking;
  isShown: boolean = false ;
  isShownForm:boolean=true;
 
+
+ @ViewChild('content') content?:ElementRef;
 // @Input() airlineItem;
   constructor(private bookService:BookingService, private route:ActivatedRoute, private routeService:RouteService, private flightService:FlightService,private toaster:ToastrService) {
     this.bookTicket=new Booking();
@@ -33,6 +37,8 @@ book:Booking;
       this.param2=params['code'];
       this.param3=params['source'];
       this.param4=params['destination'];
+
+    
     })
     this.book=new Booking();
    }
@@ -44,6 +50,8 @@ book:Booking;
     this.bookTicket.airlineCode=this.param2;
     this.bookTicket.source=this.param3;
     this.bookTicket.destination=this.param4;
+    this.bookTicket.mobile=this.bookTicket.mobile?.toString();
+    this.bookTicket.dateOfJourney=this.bookTicket.dateOfJourney?.toString();
     console.log(this.bookTicket.source);
     console.log(this.bookTicket.destination);
     // console.log(this.bookTicket.bookingPassengerName);
@@ -70,6 +78,27 @@ book:Booking;
     })
     bookForm.resetForm();
   }
+     SavePDF(){  
+      
+    var DATA=this.content?.nativeElement;
+
+    html2canvas(DATA).then(canvas => {
+     
+     let fileWidth = 208;
+     let fileHeight = canvas.height * fileWidth / canvas.width;
+     
+     const FILEURI = canvas.toDataURL('image/jpeg');
+     //canvas.toBlob
+     let PDF = new jsPDF('p', 'mm', 'a4');
+     let position = 0;
+     PDF.addImage(FILEURI, 'jpeg', 0, position, fileWidth, fileHeight);
+     PDF.save(`${this.PNR}_Air Ticket.pdf`);
+     PDF.output("dataurlnewwindow");
+        });
+   
+      
+    }  
+  
 
 
 }

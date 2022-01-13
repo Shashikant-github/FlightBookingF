@@ -30,7 +30,7 @@
 
     <div class="container1">
       <input
-        type="string"
+        type="number"
         name="mobile"
         class="form-control"
         id="exampleInputMobile"
@@ -107,7 +107,7 @@
   </div></div> -->
     <div class="container1">
       <input
-        type="datetime"
+        type="datetime-local"
         name="dateOfJourney"
         class="form-control"
         id="exampleInputDateOfJourney"
@@ -159,15 +159,15 @@
     </div>
   </form>
 </div>
-
-<div class="cards-layout">
+<div class="download"><input type="button" value="Download Ticket"  *ngIf="isShown" class="btn btn-success" (click)="SavePDF()"></div><br>
+<div class="cards-layout" >
   <div class="card mb-3" style="width: 30rem" *ngIf="isShown">
     <img
       class="card-img-top"
       src="https://media.istockphoto.com/vectors/fully-booked-sticker-fully-booked-square-isolated-sign-fully-booked-vector-id1252369113?k=20&m=1252369113&s=170667a&w=0&h=NMjKngxN3qCsCxVvqx4lZYjz16H2uEROKCCdT4y_jj4="
       alt="BookedTicket"
     />
-    <div class="card-body" >
+    <div class="card-body" #content  >
     <h3 class="card-title"><b>PNR:-</b>{{ book.bookingPNR }}</h3>
       <h3 class="card-title"><b>Passenger Name:-</b> {{ book.bookingPassengerName}}</h3>
       <h3 class="card-title"><b>Mobile No.:- </b>{{ book.mobile }}</h3>
@@ -176,6 +176,8 @@
       <h3 class="card-title"><b>Date Of Journey:- </b> {{ book.dateOfJourney }}</h3>
       <h3 class="card-title"><b>Date Of Booking:- </b> {{ book.bookingDate }}</h3>
       <h3 class="card-title"><b>Email ID:- </b>{{ book.emailID }}   <b>Ticket Status:- </b> {{ book.ticketStatus }}</h3>
+      <!-- <h3><input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"></h3> -->
     </div>
   </div>
 </div>
+

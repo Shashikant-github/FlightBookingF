@@ -39,11 +39,13 @@ import { SearchFlightUserComponent } from 'src/app/components/dashboard/search-f
       { path: '', component: FlightsComponent, pathMatch: 'full'},
       { path: 'login', component: LoginComponent },
       {path:'register',component:RegisterComponent},
-      {path:'searchFlight',component:SearchFlightComponent},      
+      {path:'searchFlight',component:SearchFlightComponent},
+      {path:"PNR",component:PnrDetailsComponent},      
     ]
 },
 
   {path:'logout',component:LogoutComponent},
+  
   //{path:"bookFlight",component:BookFlightComponent},
  // {path:"displayFlights",component:DisplayFlightComponent},
   

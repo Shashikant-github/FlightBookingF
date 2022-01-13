@@ -32,6 +32,7 @@ export class SearchFlightComponent implements OnInit {
     this.flightService.SearchFlights(this.bookingSource?.toUpperCase(),this.bookingDestination?.toUpperCase()).subscribe((res)=>{
       if(res.length!=0){
         this.flightRes=res;
+        this.noFlight="";
         console.log(res);
       }
       else{

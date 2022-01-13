@@ -52,7 +52,7 @@
         <h5 class="card-title"><b>Source:- </b>{{flight.source}}</h5>
         <h5 class="card-title"><b>Destination:- </b>{{flight.destination}}</h5>
         <h5 class="card-title"><b>Category:- </b> {{flight.category}}</h5>
-        <h5 class="card-title"><b>Ticket Price:- </b> {{flight.ticketPrice}}</h5>
+        <h5 class="card-title"><b>Ticket Price:- Rs.</b> {{flight.ticketPrice}}/-</h5>
         <!-- <button type="submit" class="btn btn-primary" (click)="loginBook()">To Book plsease Login</button> -->
         <a type="submit" mat-raised-button  [routerLink]="['/bookFlight']" [queryParams]="{airline:flight.airlineName,code:flight.airlineCode,source:flight.source,destination:flight.destination}">Book Ticket</a>
       </div>

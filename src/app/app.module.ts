@@ -92,7 +92,7 @@ import { SearchFlightUserComponent } from './components/dashboard/search-flight-
    MatInputModule,
    FormsModule,
    ToastrModule.forRoot({
-    timeOut: 500,
+    timeOut: 1000,
     positionClass: 'toast-top-right',
     preventDuplicates: true,
   }),

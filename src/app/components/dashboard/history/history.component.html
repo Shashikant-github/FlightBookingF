@@ -39,7 +39,7 @@
         <h4 class="card-title"><b>Date Of Journey:- </b> {{ booking.dateOfJourney }}</h4>
         <h4 class="card-title"><b>Date Of Booking:- </b> {{ booking.bookingDate }}</h4>
         <h4 class="card-title"><b>Email ID:- </b>{{ booking.emailID }}   <b>Ticket Status:- </b> {{ booking.ticketStatus }}</h4>
-        <h4 class="card-title"><a type="submit"  class="btn btn-danger" *ngIf="booking.ticketStatus=='BOOKED'"  (click)="cancelBooking(booking.bookingPNR)" ><b>Cancel Ticket</b></a></h4>
+        <h4 class="card-title"><a type="submit"  class="btn btn-danger" *ngIf="booking.ticketStatus=='BOOKED'||booking.ticketStatus=='Booked'"  (click)="cancelBooking(booking.bookingPNR)" ><b>Cancel Ticket</b></a></h4>
       </div>
     </div>
     </div>
