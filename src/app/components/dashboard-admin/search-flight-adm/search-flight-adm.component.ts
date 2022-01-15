@@ -42,6 +42,7 @@ export class SearchFlightAdmComponent implements OnInit {
     console.log(this.bookingDestination);
     this.flightService.SearchFlights(this.bookingSource?.toUpperCase(),this.bookingDestination?.toUpperCase()).subscribe((res)=>{
       if(res.length!=0){
+        this.noFlight="";
         this.flightRes=res;
         console.log(res);
       }
@@ -49,6 +50,7 @@ export class SearchFlightAdmComponent implements OnInit {
         alert(`No Flight Found from ${this.source?.toUpperCase()} to ${this.dest?.toUpperCase()} `);
         this.noFlight=`No Flight Found from ${this.source?.toUpperCase()} to ${this.dest?.toUpperCase()} `;
         console.log(res);
+        this.flightRes=undefined;
       }
     });
     searchForm.resetForm();

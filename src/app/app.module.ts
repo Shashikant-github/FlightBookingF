@@ -47,6 +47,7 @@ import { NavUComponent } from './components/dashboard/nav-u/nav-u.component';
 import { SearchFlightComponent } from './components/flights/search-flight/search-flight.component';
 import { SearchFlightAdmComponent } from './components/dashboard-admin/search-flight-adm/search-flight-adm.component';
 import { SearchFlightUserComponent } from './components/dashboard/search-flight-user/search-flight-user.component';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 
 @NgModule({
@@ -96,10 +97,9 @@ import { SearchFlightUserComponent } from './components/dashboard/search-flight-
     positionClass: 'toast-top-right',
     preventDuplicates: true,
   }),
-
-  
+   
   ],
-  providers: [
+  providers: [ BnNgIdleService,
     { provide: HTTP_INTERCEPTORS, useClass: JWTHttpInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

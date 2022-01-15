@@ -13,7 +13,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
     this.toast.success("Logged Out!");
     localStorage.clear();
-
+    sessionStorage.clear()
     //localStorage.removeItem('MyToken');
   }
 

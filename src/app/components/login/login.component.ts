@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     this.userInfo = new UserInfo();
   }
   ngOnInit(): void {
+    localStorage.clear();
+    sessionStorage.clear();
   }
   loginUser(loginForm:NgForm) {
     this.userInfo.UserIName = loginForm.value.userName;

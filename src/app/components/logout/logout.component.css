@@ -4,8 +4,12 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;   
-margin-top: 50Px;
-    }   
+    margin-top: 50Px;
+    /* background-image: url("https://www.transportenvironment.org/wp-content/uploads/2021/08/AdobeStock_plane-runway.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  */
+}   
 .shadow1{
     font-size: medium;
     margin:10px;

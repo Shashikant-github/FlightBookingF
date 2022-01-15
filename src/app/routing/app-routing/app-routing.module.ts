@@ -37,7 +37,7 @@ import { SearchFlightUserComponent } from 'src/app/components/dashboard/search-f
     component:HomeComponent,
     children: [
       { path: '', component: FlightsComponent, pathMatch: 'full'},
-      { path: 'login', component: LoginComponent },
+      { path: 'login', component: LoginComponent},
       {path:'register',component:RegisterComponent},
       {path:'searchFlight',component:SearchFlightComponent},
       {path:"PNR",component:PnrDetailsComponent},      
@@ -60,10 +60,10 @@ import { SearchFlightUserComponent } from 'src/app/components/dashboard/search-f
     path: '', 
     component:DashboardAdminComponent,
     children: [
-      { path: 'dashboardAdmin', component:DisplayFlightsAComponent, pathMatch: 'full'},
-      { path:'addFlight',component:AddFlightComponent }, 
-      {path:'allBooking', component:AllBookingComponent}, 
-      {path:'searchAdmin', component:SearchFlightAdmComponent}  
+      { path: 'dashboardAdmin', component:DisplayFlightsAComponent, pathMatch: 'full',canActivate:[AuthGuard]},
+      { path:'addFlight',component:AddFlightComponent,canActivate:[AuthGuard] }, 
+      {path:'allBooking', component:AllBookingComponent,canActivate:[AuthGuard]}, 
+      {path:'searchAdmin', component:SearchFlightAdmComponent,canActivate:[AuthGuard]}  
     ]
 }, 
 
@@ -71,11 +71,11 @@ import { SearchFlightUserComponent } from 'src/app/components/dashboard/search-f
   path: '', 
   component:DashboardComponent,
   children: [
-    { path:'dashboard', component: DisplayFlightComponent, pathMatch: 'full'},
-    {path:'bookFlight',component:BookFlightComponent},
-    {path:"dashboard/pnrDetails",component:PnrDetailsComponent},
-    {path:"dashboard/history", component:HistoryComponent},
-    {path:"searchUser", component:SearchFlightUserComponent},  
+    { path:'dashboard', component: DisplayFlightComponent, pathMatch: 'full',canActivate:[AuthGuard]},
+    {path:'bookFlight',component:BookFlightComponent,canActivate:[AuthGuard]},
+    {path:"dashboard/pnrDetails",component:PnrDetailsComponent,canActivate:[AuthGuard]},
+    {path:"dashboard/history", component:HistoryComponent,canActivate:[AuthGuard]},
+    {path:"searchUser", component:SearchFlightUserComponent,canActivate:[AuthGuard]},  
   ]
 },
 

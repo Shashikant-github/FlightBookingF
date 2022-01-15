@@ -39,6 +39,7 @@ export class SearchFlightComponent implements OnInit {
         alert(`No Flight Found from ${this.source?.toUpperCase()} to ${this.dest?.toUpperCase()} `);
         this.noFlight=`No Flight Found from ${this.source?.toUpperCase()} to ${this.dest?.toUpperCase()} `;
         console.log(res);
+        this.flightRes=undefined;
       }
     });
     searchForm.resetForm();
